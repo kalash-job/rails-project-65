@@ -1,0 +1,32 @@
+name: "main"
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      RAILS_ENV: test
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - run: make ci-setup
+      - name: Security audit dependencies
+        run: bundle exec rake bundle:audit:update
+      - name: Security audit application code
+        run: bin/rails brakeman -q -w2
+      - name: Lint Ruby files
+        run: make lint
+      - name: Run tests
+        run: make test
