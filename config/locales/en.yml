@@ -2,13 +2,14 @@
 en:
   layouts:
     application:
-      hexlet_title: Hexlet title
-      title: Title
+      hexlet_title: "© Hexlet, %{year}"
+      title: Classifieds Platform
     shared:
       nav:
-        add_post: Add post
-        hexlet_logo: Hexlet logo
+        add: Add
+        admin_panel: Admin panel
         home: Home
-        registration: Registration
+        my_ads: My ads
         sign_in: Sign in
         sign_out: Sign out
+        title: Classifieds Platform

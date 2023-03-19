@@ -1,0 +1,15 @@
+---
+ru:
+  layouts:
+    application:
+      hexlet_title: "© Хекслет, %{year}"
+      title: Доска объявлений
+    shared:
+      nav:
+        add: Добавить
+        admin_panel: Админка
+        home: Главная
+        my_ads: Мои объявления
+        sign_in: Войти
+        sign_out: Выйти
+        title: Доска объявлений
