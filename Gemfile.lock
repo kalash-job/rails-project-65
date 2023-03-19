@@ -95,6 +95,10 @@ GEM
     debug (1.7.1)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     erubi (1.12.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
@@ -211,11 +215,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sentry-rails (5.8.0)
-      railties (>= 5.0)
-      sentry-ruby (~> 5.8.0)
-    sentry-ruby (5.8.0)
-      concurrent-ruby (~> 1.0, >= 1.0.2)
     simple_form (5.2.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -278,6 +277,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  dotenv-rails
   html2slim
   jbuilder
   jsbundling-rails
@@ -289,8 +289,6 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   selenium-webdriver
-  sentry-rails
-  sentry-ruby
   simple_form
   slim-rails
   slim_lint

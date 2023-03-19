@@ -56,15 +56,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 gem 'bundler-audit'
 
-gem 'html2slim'
-
-gem 'sentry-rails'
-
-gem 'sentry-ruby'
-
 gem 'simple_form'
-
-gem 'slim_lint'
 
 gem 'slim-rails'
 
@@ -75,11 +67,17 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 
+  gem 'dotenv-rails'
+
+  gem 'html2slim'
+
   gem 'minitest-power_assert'
 
   gem 'rubocop-rails', require: false
 
   gem 'rubocop-performance'
+
+  gem 'slim_lint'
 end
 
 group :development do
