@@ -47,3 +47,4 @@
 /public/packs
 .byebug_history
 .tool-versions
+.env

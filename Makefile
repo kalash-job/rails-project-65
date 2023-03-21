@@ -5,6 +5,7 @@ seed:
 	bin/rails db:seed
 
 setup:
+	cp -n .env.example .env || true
 	bin/rails db:migrate
 	bin/rails db:seed
 
