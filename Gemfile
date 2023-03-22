@@ -56,7 +56,13 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 gem 'bundler-audit'
 
+gem 'faker'
+
 gem 'i18n'
+
+gem 'omniauth-github'
+
+gem 'omniauth-rails_csrf_protection'
 
 gem 'simple_form'
 

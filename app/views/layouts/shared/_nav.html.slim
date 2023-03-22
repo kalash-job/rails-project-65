@@ -1,29 +1,29 @@
-nav.navbar.navbar-expand-md.navbar-dark.fixed-top.bg-dark
-  .container-fluid
-    = link_to root_path, class: 'navbar-brand me-md-4' do
-      = t('.title')
-    #navbarCollapse.collapse.navbar-collapse
-      ul.nav.nav-pills.flex-grow-1.navbar-nav
-        li.nav-item.me-2
-          = link_to root_path, class: 'nav-link text-dark' do
-            = t('.home')
-        li.nav-item.me-2
-          = link_to root_path, class: 'nav-link text-dark' do
-            = t('.my_ads')
-        li.nav-item.me-2
-          = link_to root_path, class: 'nav-link text-dark' do
-            = t('.add')
-      ul.nav.nav-pills.navbar-nav
-        - condition = true
-        - if condition
+.container.mb-2
+  .d-flex.flex-wrap.align-items-center.py-2.border-bottom
+    .navbar.navbar-expand-md.navbar-light.me-auto
+      = link_to root_path, class: 'navbar-brand me-md-4' do
+        = t('.title')
+      #navbarToggler.collapse.navbar-collapse
+        ul.nav.nav-pills.flex-grow-1.navbar-nav.me-auto
           li.nav-item.me-2
             = link_to root_path, class: 'nav-link text-dark' do
-              = t('.admin_panel')
+              = t('.home')
           li.nav-item.me-2
             = link_to root_path, class: 'nav-link text-dark' do
-              = t('.sign_out')
-        - if condition
+              = t('.my_ads')
           li.nav-item.me-2
             = link_to root_path, class: 'nav-link text-dark' do
-              span.bi.bi-github.me-2
-              = t('.sign_in')
+              = t('.add')
+    ul.nav.nav-pills
+      - if signed_in?
+        li.nav-item.me-2
+          = link_to root_path, class: 'nav-link text-dark' do
+            = t('.admin_panel')
+        li.nav-item.me-2
+          = link_to session_path, data: { turbo_method: :delete }, class: 'nav-link text-dark' do
+            = t('.sign_out')
+      - else
+        li.nav-item.me-2
+          = button_to auth_request_path('github'), data: { turbo: false }, class: 'nav-link text-dark' do
+            span.bi.bi-github.me-2
+            = t('.sign_in')
