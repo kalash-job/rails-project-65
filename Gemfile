@@ -89,6 +89,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'annotate'
+
   gem 'i18n-debug'
 
   gem 'i18n-tasks', '~> 1.0.12'
