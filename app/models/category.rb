@@ -2,18 +2,14 @@
 
 # == Schema Information
 #
-# Table name: users
+# Table name: categories
 #
 #  id         :integer          not null, primary key
 #  name       :string
-#  email      :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-require 'test_helper'
-
-class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class Category < ApplicationRecord
+  has_many :bulletins, inverse_of: :category, dependent: :destroy
+  validates :name, presence: true
 end

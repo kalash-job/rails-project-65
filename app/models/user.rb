@@ -11,5 +11,6 @@
 #  updated_at :datetime         not null
 #
 class User < ApplicationRecord
+  has_many :bulletins, inverse_of: :user, dependent: :destroy
   validates :name, :email, presence: true
 end
