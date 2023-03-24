@@ -1,4 +1,4 @@
-= simple_form_for(vehicle) do |f|
+= simple_form_for(bulletin) do |f|
   = f.error_notification
   = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
 
@@ -6,9 +6,8 @@
   = f.input :description
   = f.association :category, hint: false
   hr
-  - if vehicle.image_attachment
-    = image_tag vehicle.image.variant(resize_to_limit: [200, 100]), class: 'img-thumbnail mb-2'
-  / BEGIN
+  - if bulletin.image_attachment
+    = image_tag bulletin.image.variant(resize_to_limit: [200, 100]), class: 'img-thumbnail mb-2'
   = f.input :image, as: :file
-  / END
-  = f.button :submit, class: 'btn btn-success mt-4 btn-block'
+  .col-auto.my-1.d-flex.mt-2
+    = f.button :submit, class: 'btn-primary flex-grow-2 me-2'

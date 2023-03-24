@@ -1,5 +1,46 @@
 ---
 ru:
+  date:
+    abbr_month_names:
+      -
+      - Янв
+      - Февр
+      - Март
+      - Апр
+      - Мая
+      - Июн
+      - Июл
+      - Авг
+      - Сент
+      - Окт
+      - Нояб
+      - Дек
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        few: "%{count} часа"
+        many: "%{count} часов"
+        one: "%{count} час"
+        other: "%{count} часа"
+        zero: "%{count} часов"
+      less_than_x_minutes:
+        few: "%{count} минуты"
+        many: "%{count} минут"
+        one: "%{count} минута"
+        other: "%{count} минут"
+        zero: "%{count} минут"
+      x_days:
+        few: "%{count} дня"
+        many: "%{count} дней"
+        one: "%{count} день"
+        other: "%{count} дней"
+        zero: "%{count} дней"
+      x_minutes:
+        few: "%{count} минуты"
+        many: "%{count} минут"
+        one: "%{count} минута"
+        other: "%{count} минут"
+        zero: "%{count} минут"
   layouts:
     application:
       hexlet_title: "© Хекслет, %{year}"

@@ -1,0 +1,8 @@
+= content_for :title do
+  = t('.title')
+.row
+  .p-3.p-lg-5.pt-lg-0
+    .mb-4
+      h2 = t('.add_bulletin')
+      hr
+      == render 'form', bulletin: @bulletin

@@ -12,11 +12,13 @@ html.h-100
             'data-turbo-track': 'reload', defer: true
   body.d-flex.flex-column.h-100
     = render 'layouts/shared/nav'
-    main.flex-shrink-0
-      .container
-        = render 'layouts/shared/flash'
+    main
+      .mt-4.mb-5.pb-5
+        .container
+          .p-4.align-items-center.border.shadow.bg-white.rounded-3
+            = render 'layouts/shared/flash'
 
-        == yield
+            == yield
 
     footer.bg-dark.text-light.mt-auto
       .container-xl

@@ -1,8 +1,42 @@
 # frozen_string_literal: true
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+
+[
+  'Auto',
+  'Real Estate',
+  'Electronics',
+  'Clothing, shoes, accessories',
+  'Beauty and Health'
+].each do |name|
+  category = Category.create!(name:)
+  Rails.logger.debug { "Added category #{category.name}" }
+end
+
+10.times do
+  User.create!(name: Faker::Name.name, email: Faker::Internet.unique.email)
+end
+
+directories = {
+  'Auto' => 'Auto',
+  'Real Estate' => 'Real_Estate',
+  'Electronics' => 'Electronics',
+  'Clothing, shoes, accessories' => 'Clothing_shoes',
+  'Beauty and Health' => 'Beauty_Health'
+}
+
+User.all.each do |user|
+  Category.all.each do |category|
+    image_filename = "image#{(1..3).to_a.sample}.jpg"
+    dir_name = directories[category.name]
+
+    Rails.root.join('test', 'fixtures', 'files', dir_name, image_filename).open do |file|
+      bulletin = user.bulletins.build(
+        title: Faker::Commerce.product_name.truncate(50),
+        description: Faker::Lorem.paragraph_by_chars(number: 350),
+        category_id: category.id
+      )
+      bulletin.image.attach(io: file, filename: "#{user.id}_#{category.id}_#{image_filename}", content_type: 'image/jpeg')
+      bulletin.save!
+      sleep 1
+    end
+  end
+end

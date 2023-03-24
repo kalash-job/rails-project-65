@@ -1,5 +1,38 @@
 ---
 en:
+  date:
+    abbr_month_names:
+      -
+      - Jan
+      - Feb
+      - Mar
+      - Apr
+      - May
+      - Jun
+      - Jul
+      - Aug
+      - Sep
+      - Oct
+      - Nov
+      - Dec
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: "%{count} hour"
+        other: "%{count} hours"
+        zero: "%{count} hours"
+      less_than_x_minutes:
+        one: "%{count} minute"
+        other: "%{count} minutes"
+        zero: "%{count} minute"
+      x_days:
+        one: "%{count} day"
+        other: "%{count} days"
+        zero: "%{count} days"
+      x_minutes:
+        one: "%{count} minute"
+        other: "%{count} minutes"
+        zero: "%{count} minutes"
   layouts:
     application:
       hexlet_title: "© Hexlet, %{year}"
