@@ -23,5 +23,6 @@ module RailsProject65
     I18n.load_path += Dir[Rails.root.join('lib/locale/*.{rb,yml}')]
     I18n.available_locales = %i[ru en]
     I18n.default_locale = :ru
+    Rails.application.config.active_storage.variant_processor = :mini_magick
   end
 end
