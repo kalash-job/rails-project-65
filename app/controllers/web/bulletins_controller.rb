@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Web::BulletinsController < Web::ApplicationController
+  before_action :authenticate_user!, only: %i[new create]
   def index
     @bulletins = Bulletin.with_attached_image.by_creation_date_desc.page(params[:page])
   end
@@ -29,5 +30,11 @@ class Web::BulletinsController < Web::ApplicationController
 
   def bulletin_params
     params.require(:bulletin).permit(:title, :description, :category_id, :image)
+  end
+
+  def authenticate_user!
+    return if signed_in?
+
+    redirect_to root_path, flash: { warning: t('.non_authenticated_user') }
   end
 end

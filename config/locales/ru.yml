@@ -21,7 +21,7 @@ ru:
         few: "%{count} часа"
         many: "%{count} часов"
         one: "%{count} час"
-        other: "%{count} часа"
+        other: "%{count} часов"
         zero: "%{count} часов"
       less_than_x_minutes:
         few: "%{count} минуты"

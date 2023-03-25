@@ -1,5 +1,5 @@
 - if flash.any?
   .container.my-2.pt-5
-    - flash.each do |_type, msg|
-      .alert.alert-info
+    - flash.each do |type, msg|
+      div class="alert alert-#{type}"
         = msg
