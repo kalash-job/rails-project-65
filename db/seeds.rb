@@ -16,11 +16,11 @@ end
 end
 
 directories = {
-  'Auto' => 'Auto',
-  'Real Estate' => 'Real_Estate',
-  'Electronics' => 'Electronics',
-  'Clothing, shoes, accessories' => 'Clothing_shoes',
-  'Beauty and Health' => 'Beauty_Health'
+  'Auto' => 'auto',
+  'Real Estate' => 'real_estate',
+  'Electronics' => 'electronics',
+  'Clothing, shoes, accessories' => 'clothing_shoes',
+  'Beauty and Health' => 'beauty_health'
 }
 
 User.all.each do |user|
