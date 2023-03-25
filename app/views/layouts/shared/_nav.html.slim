@@ -8,12 +8,13 @@
           li.nav-item.me-2
             = link_to root_path, class: 'nav-link text-dark' do
               = t('.home')
-          li.nav-item.me-2
-            = link_to root_path, class: 'nav-link text-dark' do
-              = t('.my_ads')
-          li.nav-item.me-2
-            = link_to new_bulletin_path, class: 'nav-link text-dark' do
-              = t('.add')
+          - if signed_in?
+            li.nav-item.me-2
+              = link_to root_path, class: 'nav-link text-dark' do
+                = t('.my_ads')
+            li.nav-item.me-2
+              = link_to new_bulletin_path, class: 'nav-link text-dark' do
+                = t('.add')
     ul.nav.nav-pills
       - if signed_in?
         li.nav-item.me-2
