@@ -57,20 +57,21 @@ gem 'bootsnap', require: false
 # gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem 'image_processing', '~> 1.2'
+
 gem 'bundler-audit'
 
 gem 'faker'
 
 gem 'i18n'
 
-gem 'image_processing'
-
 gem 'kaminari'
 
 gem 'omniauth-github'
 
 gem 'omniauth-rails_csrf_protection'
+
+gem 'pundit'
 
 gem 'simple_form'
 
