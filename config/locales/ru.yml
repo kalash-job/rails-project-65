@@ -1,5 +1,8 @@
 ---
 ru:
+  buttons:
+    reset: Сбросить
+    search: Найти
   date:
     abbr_month_names:
       -
@@ -54,3 +57,11 @@ ru:
         sign_in: Войти
         sign_out: Выйти
         title: Доска объявлений
+  web:
+    bulletins:
+      bulletins_filter:
+        category: Выбрать категорию
+        select_category: Выбрать категорию
+        title: Искать по названию объявления
+      index:
+        created: Создан

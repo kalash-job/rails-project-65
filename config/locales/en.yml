@@ -1,5 +1,8 @@
 ---
 en:
+  buttons:
+    reset: Reset
+    search: Search
   date:
     abbr_month_names:
       -
@@ -46,3 +49,12 @@ en:
         sign_in: Sign in
         sign_out: Sign out
         title: Classifieds Platform
+  select_category: Select Category
+  web:
+    bulletins:
+      bulletins_filter:
+        category: Choose a category
+        select_category: Select Category
+        title: Search by title
+      index:
+        created: Created

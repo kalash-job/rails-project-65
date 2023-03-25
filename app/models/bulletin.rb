@@ -35,4 +35,12 @@ class Bulletin < ApplicationRecord
   validates :image, attached: true, content_type: %i[png jpg jpeg], size: { less_than: 5.megabytes }
 
   scope :by_creation_date_desc, -> { order(created_at: :desc) }
+
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[category_id title]
+  end
+
+  def self.ransackable_scopes(_auth_object = nil)
+    %i[by_creation_date_desc]
+  end
 end

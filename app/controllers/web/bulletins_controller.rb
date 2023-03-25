@@ -3,7 +3,9 @@
 class Web::BulletinsController < Web::ApplicationController
   before_action :authenticate_user!, only: %i[new create]
   def index
-    @bulletins = Bulletin.with_attached_image.by_creation_date_desc.page(params[:page])
+    @query = Bulletin.ransack(params[:q])
+    @bulletins = @query.result.with_attached_image.by_creation_date_desc.page(params[:page])
+    @categories = Category.all
   end
 
   def show
