@@ -284,6 +284,10 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    ransack (4.0.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     regexp_parser (2.7.0)
     reline (0.3.2)
       io-console (~> 0.5)
@@ -313,6 +317,14 @@ GEM
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.8.1)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -402,9 +414,11 @@ DEPENDENCIES
   puma (~> 5.0)
   pundit
   rails (~> 7.0.4, >= 7.0.4.3)
+  ransack
   rollbar
   rubocop-performance
   rubocop-rails
+  sassc-rails
   selenium-webdriver
   simple_form
   slim-rails
