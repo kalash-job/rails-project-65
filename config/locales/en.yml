@@ -36,6 +36,11 @@ en:
         one: "%{count} minute"
         other: "%{count} minutes"
         zero: "%{count} minutes"
+  helpers:
+    submit:
+      create: Create bulletin
+      bulletin:
+        create: Create bulletin
   layouts:
     application:
       hexlet_title: "© Hexlet, %{year}"
@@ -58,3 +63,7 @@ en:
         title: Search by title
       index:
         created: Created
+        title: All bulletins
+      new:
+        add_bulletin: Add bulletin
+        title: Add bulletin

@@ -1,0 +1,36 @@
+---
+ru:
+  simple_form:
+    activerecord:
+      attributes:
+        post:
+          body: Content
+    error_notification:
+      default_message: 'Пожалуйста, исправьте ошибки:'
+    labels:
+      bulletin:
+        description: Описание
+        category: Категория
+        image: Изображение
+        title: Название
+      defaults:
+        new:
+          description: Описание
+          category: Категория
+          title: Название
+        title: Название
+    'no': Нет
+    placeholders:
+      defaults:
+        email: Электронная почта
+        new:
+          email: Электронная почта
+          password: Пароль
+          password_confirmation: Подтверждение пароля
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+    required:
+      html: '<abbr title="required">*</abbr>'
+      mark: "*"
+      text: обязательное
+    'yes': Да

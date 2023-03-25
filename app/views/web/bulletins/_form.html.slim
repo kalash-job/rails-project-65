@@ -7,7 +7,7 @@
   = f.association :category, hint: false
   hr
   - if bulletin.image_attachment
-    = image_tag bulletin.image.variant(resize_to_limit: [200, 100]), class: 'img-thumbnail mb-2'
-  = f.input :image, as: :file
+    = image_tag bulletin.image.variant(resize_to_limit: [200, 200]), class: 'img-thumbnail mb-2'
+  = f.input :image, as: :file, required: true
   .col-auto.my-1.d-flex.mt-2
     = f.button :submit, class: 'btn-primary flex-grow-2 me-2'

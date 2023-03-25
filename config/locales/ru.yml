@@ -44,6 +44,11 @@ ru:
         one: "%{count} минута"
         other: "%{count} минут"
         zero: "%{count} минут"
+  helpers:
+    submit:
+      create: Добавить объявление
+      bulletin:
+        create: Добавить объявление
   layouts:
     application:
       hexlet_title: "© Хекслет, %{year}"
@@ -65,3 +70,7 @@ ru:
         title: Искать по названию объявления
       index:
         created: Создан
+        title: Все объявления
+      new:
+        add_bulletin: Добавить объявление
+        title: Добавить объявление
