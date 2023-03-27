@@ -63,6 +63,8 @@ gem 'bundler-audit'
 
 gem 'faker'
 
+gem 'flash_rails_messages'
+
 gem 'i18n'
 
 gem 'kaminari'
