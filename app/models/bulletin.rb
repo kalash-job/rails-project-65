@@ -32,8 +32,9 @@ class Bulletin < ApplicationRecord
   validates :title, :description, presence: true
   validates :title, length: { maximum: 50 }
   validates :description, length: { maximum: 1000 }
-  validates :image, attached: true, presence: true, content_type: %i[png jpg jpeg], size: { less_than: 5.megabytes }
+  validates :image, attached: true, content_type: %i[png jpg jpeg], size: { less_than: 5.megabytes }
 
+  # TODO: add scope to get only bulletins on moderation
   scope :by_creation_date_desc, -> { order(created_at: :desc) }
 
   def self.ransackable_attributes(_auth_object = nil)
