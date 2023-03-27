@@ -11,6 +11,11 @@ en:
         image: Image
         category: Category
         title: Title
+      category:
+        edit:
+          name: Name
+        new:
+          name: Name
       defaults:
         new:
           description: Description

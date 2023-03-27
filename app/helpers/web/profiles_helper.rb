@@ -1,0 +1,2 @@
+module Web::ProfilesHelper
+end

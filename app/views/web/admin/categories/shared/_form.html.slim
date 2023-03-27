@@ -1,0 +1,7 @@
+= simple_form_for(category, url:) do |f|
+  = f.error_notification
+  = f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?
+
+  = f.input :name
+  .col-auto.my-1.d-flex.mt-2
+    = f.button :submit, class: 'btn-primary flex-grow-2 me-2'

@@ -1,0 +1,8 @@
+- content_for :title do
+  = t('.title')
+.row
+  .col-md-3
+    = render 'web/admin/shared/nav'
+  .col-md-9
+    h1.h2.mb-4 = t('.new_category')
+    == render 'web/admin/categories/shared/form', category: @category, url: admin_categories_path

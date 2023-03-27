@@ -13,6 +13,11 @@ ru:
         category: Категория
         image: Изображение
         title: Название
+      category:
+        edit:
+          name: Название
+        new:
+          name: Название
       defaults:
         new:
           description: Описание

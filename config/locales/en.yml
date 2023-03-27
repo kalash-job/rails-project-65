@@ -38,9 +38,11 @@ en:
         zero: "%{count} minutes"
   helpers:
     submit:
-      create: Create bulletin
       bulletin:
         create: Create bulletin
+      category:
+        create: Create category
+        update: Update category
   layouts:
     application:
       hexlet_title: "© Hexlet, %{year}"
@@ -56,14 +58,73 @@ en:
         title: Classifieds Platform
   select_category: Select Category
   web:
+    admin:
+      admins:
+        index:
+          actions: Actions
+          bulletin_created: Creation date
+          bulletin_name: Bulletin name
+          bulletins_on_moderation: Bulletins on moderation
+          confirm_publish: Confirm publishing
+          confirm_rejecting: Confirm rejecting
+          confirm_archiving: Confirm archiving
+          title: Admin panel
+          to_publish: Publish
+          to_reject: Reject
+          to_archive: Archive
+      bulletins:
+        index:
+          all_bulletins: All bulletins
+          actions: Actions
+          bulletin_created: Creation date
+          bulletin_name: Bulletin name
+          title: Admin panel - All bulletins
+          confirm_archiving: Confirm archiving
+          show: Show
+          to_archive: Archive
+      categories:
+        index:
+          title: Admin panel - All categories
+          all_categories: All categories
+          add_category: Add category
+          category_name: Name
+          actions: Actions
+          edit: Edit
+          delete: Delete
+          confirm_deleting: Confirm deleting
+        create:
+          failure: Category has not been created
+          success: Category has been created successfully
+        destroy:
+          contains_bulletins: Category has not been deleted because it contains the bulletins
+          failure: Category has not been deleted
+          success: Category has been deleted successfully
+        edit:
+          edit_category: Edit category
+          title: Admin panel - Edit Category
+        new:
+          new_category: New Category
+          title: Admin panel - New Category
+        update:
+          failure: Category has not been updated
+          success: Category has been updated successfully
+      shared:
+        nav:
+          bulletins_on_moderation: Bulletins on moderation
+          all_bulletins: All bulletins
+          all_categories: All categories
     bulletins:
-      bulletins_filter:
-        category: Choose a category
-        select_category: Select Category
-        title: Search by title
+      create:
+        failure: Bulletin has not been created
+        success: Bulletin has been created successfully
       index:
         created: Created
         title: All bulletins
       new:
         add_bulletin: Add bulletin
         title: Add bulletin
+    shared:
+      bulletins_filter:
+        category: Choose a category
+        select_category: Select Category
+        title: Search by title

@@ -20,8 +20,7 @@ class Web::BulletinsController < Web::ApplicationController
     @bulletin = current_user.bulletins.build(bulletin_params)
 
     if @bulletin.save
-      #  TODO: после нужно сделать редирект на profile
-      redirect_to root_path, notice: t('.success')
+      redirect_to profile_path, notice: t('.success')
     else
       flash.now[:failure] = t('.failure')
       render :new, status: :unprocessable_entity

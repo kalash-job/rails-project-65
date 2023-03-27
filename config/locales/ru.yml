@@ -46,9 +46,11 @@ ru:
         zero: "%{count} минут"
   helpers:
     submit:
-      create: Добавить объявление
       bulletin:
         create: Добавить объявление
+      category:
+        create: Добавить категорию
+        update: Обновить категорию
   layouts:
     application:
       hexlet_title: "© Хекслет, %{year}"
@@ -63,14 +65,73 @@ ru:
         sign_out: Выйти
         title: Доска объявлений
   web:
+    admin:
+      admins:
+        index:
+          actions: Действия
+          bulletin_created: Дата создания
+          bulletin_name: Заголовок
+          bulletins_on_moderation: Объявления на модерации
+          title: Панель администрирования
+          confirm_publish: Подтвердите публикацию
+          confirm_rejecting: Подтвердите возврат
+          confirm_archiving: Подтвердите перенос в архив
+          to_publish: Опубликовать
+          to_reject: Вернуть
+          to_archive: В архив
+      bulletins:
+        index:
+          all_bulletins: Все объявления
+          actions: Действия
+          bulletin_created: Дата создания
+          bulletin_name: Заголовок
+          title: Панель администрирования - Все объявления
+          confirm_archiving: Подтвердите перенос в архив
+          show: Показать
+          to_archive: В архив
+      categories:
+        index:
+          title: Панель администрирования - Все категории
+          all_categories: Все категории
+          add_category: Добавить категорию
+          category_name: Название
+          actions: Действия
+          edit: Редактировать
+          delete: Удалить
+          confirm_deleting: Подтвердите удаление
+        create:
+          failure: Категория не была создана
+          success: Категория была успешно создана
+        destroy:
+          contains_bulletins: Не удалось удалить категорию, так как она содержит объявления
+          failure: Не удалось удалить категорию
+          success: Категория была успешно удалена
+        edit:
+          edit_category: Редактировать категорию
+          title: Панель администрирования - Редактировать категорию
+        new:
+          new_category: Новая категория
+          title: Панель администрирования - Новая категория
+        update:
+          failure: Категория не была обновлена
+          success: Категория была успешно обновлена
+      shared:
+        nav:
+          bulletins_on_moderation: Объявления на модерации
+          all_bulletins: Все объявления
+          all_categories: Все категории
     bulletins:
-      bulletins_filter:
-        category: Выбрать категорию
-        select_category: Выбрать категорию
-        title: Искать по названию объявления
+      create:
+        failure: Объявление не было создано
+        success: Объявление было создано успешно
       index:
         created: Создан
         title: Все объявления
       new:
         add_bulletin: Добавить объявление
         title: Добавить объявление
+    shared:
+      bulletins_filter:
+        category: Выбрать категорию
+        select_category: Выбрать категорию
+        title: Искать по названию объявления
