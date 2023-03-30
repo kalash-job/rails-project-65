@@ -40,6 +40,7 @@ en:
     submit:
       bulletin:
         create: Create bulletin
+        update: Update bulletin
       category:
         create: Create category
         update: Update category
@@ -64,8 +65,7 @@ en:
           actions: Actions
           bulletin_created: Creation date
           bulletin_name: Bulletin name
-          bulletins_on_moderation: Bulletins on moderation
-          confirm_publish: Confirm publishing
+          bulletins_under_moderation: Bulletins on moderation
           confirm_rejecting: Confirm rejecting
           confirm_archiving: Confirm archiving
           title: Admin panel
@@ -73,20 +73,36 @@ en:
           to_reject: Reject
           to_archive: Archive
       bulletins:
+        archive:
+          failure: Bulletin was not archived
+          success: Bulletin has been archived
         index:
           all_bulletins: All bulletins
           actions: Actions
           bulletin_created: Creation date
           bulletin_name: Bulletin name
+          bulletin_state: Bulletin state
           title: Admin panel - All bulletins
           confirm_archiving: Confirm archiving
           show: Show
           to_archive: Archive
+          archived: Archived
+          draft: Draft
+          under_moderation: On moderate
+          published: Published
+          rejected: Rejected
+        publish:
+          failure: Bulletin was not published
+          success: Bulletin was successfully published
+        reject:
+          failure: Bulletin was not rejected
+          success: Bulletin was successfully rejected
       categories:
         index:
           title: Admin panel - All categories
           all_categories: All categories
           add_category: Add category
+          category_id: Id
           category_name: Name
           actions: Actions
           edit: Edit
@@ -96,8 +112,7 @@ en:
           failure: Category has not been created
           success: Category has been created successfully
         destroy:
-          contains_bulletins: Category has not been deleted because it contains the bulletins
-          failure: Category has not been deleted
+          failure: Category has not been deleted because it contains the bulletins
           success: Category has been deleted successfully
         edit:
           edit_category: Edit category
@@ -110,21 +125,72 @@ en:
           success: Category has been updated successfully
       shared:
         nav:
-          bulletins_on_moderation: Bulletins on moderation
+          bulletins_under_moderation: Bulletins on moderation
           all_bulletins: All bulletins
           all_categories: All categories
     bulletins:
+      archive:
+        failure: Bulletin was not archived
+        success: Bulletin has been archived
       create:
         failure: Bulletin has not been created
         success: Bulletin has been created successfully
+      edit:
+        edit_bulletin: Edit bulletin
+        title: Edit bulletin
       index:
+        bulletins: Bulletins
         created: Created
         title: All bulletins
+      moderate:
+        failure: Bulletin has not been submitted for moderation
+        success: Bulletin has been submitted for moderation
       new:
         add_bulletin: Add bulletin
+        non_authenticated_user: The action is available only to registered users
         title: Add bulletin
+      shared:
+        bulletins_filter:
+          category: Choose a category
+          select_category: Select Category
+          title: Search by title
+          draft: Draft
+          under_moderation: On moderation
+          published: Published
+          archived: Archived
+          rejected: Rejected
+      update:
+        failure: Bulletin has not been updated
+        success: Bulletin has been updated successfully
+    profiles:
+      show:
+        actions: Actions
+        add_bulletin: Add bulletin
+        archived: Archived
+        bulletin_created: Creation date
+        bulletin_name: Bulletin name
+        bulletin_state: Bulletin state
+        confirm_archiving: Confirm archiving
+        draft: Draft
+        edit: Edit
+        moderate: Moderate
+        my_bulletins: My bulletins
+        non_authenticated_user: The action is available only to registered users
+        under_moderation: On moderate
+        published: Published
+        rejected: Rejected
+        show: Show
+        title: My bulletins
+        to_archive: Archive
     shared:
       bulletins_filter:
         category: Choose a category
         select_category: Select Category
         title: Search by title
+        draft: Draft
+        under_moderation: On moderation
+        published: Published
+        archived: Archived
+        rejected: Rejected
+        select_state: Select state
+        state: By state

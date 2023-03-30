@@ -5,7 +5,7 @@
     = render 'web/admin/shared/nav'
   .col-md-9
     h1.h2.mb-4 = t('.all_bulletins')
-    == render 'web/shared/bulletins_filter', query: @query, categories: @categories
+    == render 'web/shared/bulletins_filter', query: @query, url: admin_bulletins_path
     row.mt-2
       table.table.table-borderless
         thead
@@ -20,15 +20,16 @@
               td
                 = link_to bulletin_path(bulletin) do
                   = bulletin.title
-              td Здесь будет отображено состояние
+              td
+                = t(".#{bulletin.state}")
               td
                 = time_ago_in_words bulletin.created_at
               td
                 = link_to bulletin_path(bulletin), class: 'me-1' do
                   = t('.show')
-                / TODO: add condition
-                = link_to archive_admin_bulletin_path(bulletin),
-                        data: { turbo_method: 'patch', confirm: t('.confirm_archiving') }, class: 'text-danger' do
-                  = t('.to_archive')
+                - if bulletin.may_archive?
+                  = link_to archive_admin_bulletin_path(bulletin),
+                          data: { turbo_method: 'patch', turbo_confirm: t('.confirm_archiving') }, class: 'text-danger' do
+                    = t('.to_archive')
       .mt-2
         = paginate @bulletins

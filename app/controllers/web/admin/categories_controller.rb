@@ -38,10 +38,6 @@ class Web::Admin::CategoriesController < Web::Admin::ApplicationController
   def destroy
     @category = Category.find params[:id]
 
-    if @category.bulletins.present?
-      return redirect_to admin_categories_path, alert: t('.contains_bulletins')
-    end
-
     if @category.destroy
       redirect_to admin_categories_path, notice: t('.success')
     else

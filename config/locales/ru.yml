@@ -48,6 +48,7 @@ ru:
     submit:
       bulletin:
         create: Добавить объявление
+        update: Обновить объявление
       category:
         create: Добавить категорию
         update: Обновить категорию
@@ -71,29 +72,44 @@ ru:
           actions: Действия
           bulletin_created: Дата создания
           bulletin_name: Заголовок
-          bulletins_on_moderation: Объявления на модерации
+          bulletins_under_moderation: Объявления на модерации
           title: Панель администрирования
-          confirm_publish: Подтвердите публикацию
           confirm_rejecting: Подтвердите возврат
           confirm_archiving: Подтвердите перенос в архив
           to_publish: Опубликовать
           to_reject: Вернуть
           to_archive: В архив
       bulletins:
+        archive:
+          failure: Объявление не отправилось в архив
+          success: Объявление отправилось в архив
         index:
           all_bulletins: Все объявления
           actions: Действия
           bulletin_created: Дата создания
           bulletin_name: Заголовок
+          bulletin_state: Состояние
           title: Панель администрирования - Все объявления
           confirm_archiving: Подтвердите перенос в архив
           show: Показать
           to_archive: В архив
+          archived: Архивировано
+          draft: Черновик
+          under_moderation: На модерации
+          published: Опубликовано
+          rejected: Возвращено
+        publish:
+          failure: Объявление не было опубликовано
+          success: Объявление было успешно опубликовано
+        reject:
+          failure: Объявление не было возвращено
+          success: Объявление было успешно возвращено
       categories:
         index:
           title: Панель администрирования - Все категории
           all_categories: Все категории
           add_category: Добавить категорию
+          category_id: Id
           category_name: Название
           actions: Действия
           edit: Редактировать
@@ -103,8 +119,7 @@ ru:
           failure: Категория не была создана
           success: Категория была успешно создана
         destroy:
-          contains_bulletins: Не удалось удалить категорию, так как она содержит объявления
-          failure: Не удалось удалить категорию
+          failure: Не удалось удалить категорию, так как она содержит объявления
           success: Категория была успешно удалена
         edit:
           edit_category: Редактировать категорию
@@ -117,21 +132,80 @@ ru:
           success: Категория была успешно обновлена
       shared:
         nav:
-          bulletins_on_moderation: Объявления на модерации
+          bulletins_under_moderation: Объявления на модерации
           all_bulletins: Все объявления
           all_categories: Все категории
+    auth:
+      callback:
+        failure: Вам не удалось войти в аккаунт
+        success: Вы успешно вошли в аккаунт
     bulletins:
+      archive:
+        failure: Объявление не отправилось в архив
+        success: Объявление отправилось в архив
       create:
         failure: Объявление не было создано
         success: Объявление было создано успешно
+      edit:
+        edit_bulletin: Редактировать объявление
+        title: Редактировать объявление
       index:
+        bulletins: Объявления
         created: Создан
         title: Все объявления
+      moderate:
+        failure: Объявление не отправлено на модерацию
+        success: Объявление отправлено на модерацию
       new:
         add_bulletin: Добавить объявление
+        non_authenticated_user: Действие доступно только зарегистрированным пользователям
         title: Добавить объявление
+      shared:
+        bulletins_filter:
+          category: Выбрать категорию
+          select_category: Выбрать категорию
+          title: Искать по названию объявления
+          draft: Черновик
+          under_moderation: На модерации
+          published: Опубликовано
+          archived: Архивировано
+          rejected: Возвращено
+      update:
+        failure: Объявление не было обновлено
+        success: Объявление было обновлено успешно
+    profiles:
+      show:
+        actions: Действия
+        add_bulletin: Добавить объявление
+        archived: Архивировано
+        bulletin_created: Дата создания
+        bulletin_name: Заголовок
+        bulletin_state: Состояние
+        confirm_archiving: Подтвердить архивирование
+        draft: Черновик
+        edit: Редактировать
+        moderate: Модерировать
+        my_bulletins: Мои объявления
+        non_authenticated_user: Действие доступно только зарегистрированным пользователям
+        under_moderation: На модерации
+        published: Опубликовано
+        rejected: Возвращено
+        show: Показать
+        title: Мои объявления
+        to_archive: Архивировать
+    sessions:
+      destroy:
+        failure: Вам не удалось выйти из аккаунта
+        success: Вы успешно вышли из аккаунта
     shared:
       bulletins_filter:
         category: Выбрать категорию
         select_category: Выбрать категорию
         title: Искать по названию объявления
+        draft: Черновик
+        under_moderation: На модерации
+        published: Опубликовано
+        archived: Архивировано
+        rejected: Возвращено
+        select_state: Выбрать состояние
+        state: По состоянию

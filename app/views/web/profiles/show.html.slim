@@ -1,2 +1,41 @@
-h1 Web::Profiles#show
-p Find me in app/views/web/profiles/show.html.slim
+- content_for :title do
+  = t('.title')
+.row
+  .p-3.p-lg-5.pt-lg-0
+    .mb-4
+      h2 = t('.my_bulletins')
+      hr
+    = link_to new_bulletin_path do
+      = t('.add_bulletin')
+    == render 'web/shared/bulletins_filter', query: @query, url: profile_path
+    .row.mt-2
+      table.table.table-borderless
+        thead
+          tr
+            th = t('.bulletin_name')
+            th = t('.bulletin_state')
+            th = t('.bulletin_created')
+            th = t('.actions')
+        tbody
+          - @bulletins.each do |bulletin|
+            tr
+              td
+                = bulletin.title
+              td
+                = t(".#{bulletin.state}")
+              td
+                = time_ago_in_words bulletin.created_at
+              td
+                = link_to bulletin_path(bulletin), class: 'me-2' do
+                  = t('.show')
+                = link_to edit_bulletin_path(bulletin), class: 'me-2' do
+                  = t('.edit')
+                - if bulletin.may_moderate?
+                  = link_to moderate_bulletin_path(bulletin), data: { turbo_method: 'patch' }, class: 'me-2' do
+                    = t('.moderate')
+                - if bulletin.may_archive?
+                  = link_to archive_admin_bulletin_path(bulletin),
+                          data: { turbo_method: 'patch', turbo_confirm: t('.confirm_archiving') }, class: 'text-danger' do
+                    = t('.to_archive')
+      .mt-2
+        = paginate @bulletins

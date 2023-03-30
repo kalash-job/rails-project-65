@@ -9,8 +9,13 @@ ru:
       default_message: 'Пожалуйста, исправьте ошибки:'
     labels:
       bulletin:
-        description: Описание
         category: Категория
+        description: Описание
+        edit:
+          description: Описание
+          category: Категория
+          image: Изображение
+          title: Название
         image: Изображение
         title: Название
       category:
@@ -24,16 +29,11 @@ ru:
           category: Категория
           title: Название
         title: Название
+    options:
+      q:
+        index:
+          state_eq: Состояния
     'no': Нет
-    placeholders:
-      defaults:
-        email: Электронная почта
-        new:
-          email: Электронная почта
-          password: Пароль
-          password_confirmation: Подтверждение пароля
-        password: Пароль
-        password_confirmation: Подтверждение пароля
     required:
       html: '<abbr title="required">*</abbr>'
       mark: "*"

@@ -5,12 +5,32 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
     # TODO: add checking of admin access
     @query = Bulletin.ransack(params[:q])
     @bulletins = @query.result.by_creation_date_desc.page(params[:page])
-    @categories = Category.all
   end
 
-  def archive; end
+  def archive
+    @bulletin = Bulletin.find params[:id]
+    if @bulletin.archive!
+      redirect_to request.referer, notice: t('.success')
+    else
+      redirect_to request.referer, alert: t('.failure')
+    end
+  end
 
-  def publish; end
+  def publish
+    @bulletin = Bulletin.find params[:id]
+    if @bulletin.publish!
+      redirect_to admin_root_path, notice: t('.success')
+    else
+      redirect_to admin_root_path, alert: t('.failure')
+    end
+  end
 
-  def reject; end
+  def reject
+    @bulletin = Bulletin.find params[:id]
+    if @bulletin.reject!
+      redirect_to admin_root_path, notice: t('.success')
+    else
+      redirect_to admin_root_path, alert: t('.failure')
+    end
+  end
 end

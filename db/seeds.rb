@@ -22,21 +22,28 @@ directories = {
   'Clothing, shoes, accessories' => 'clothing_shoes',
   'Beauty and Health' => 'beauty_health'
 }
+states = %w[published under_moderation archived]
 
-User.all.each do |user|
-  Category.all.each do |category|
-    image_filename = "image#{(1..3).to_a.sample}.jpg"
-    dir_name = directories[category.name]
+3.times do
+  User.all.each do |user|
+    Category.all.each do |category|
+      image_filename = "image#{(1..3).to_a.sample}.jpg"
+      dir_name = directories[category.name]
 
-    Rails.root.join('test', 'fixtures', 'files', dir_name, image_filename).open do |file|
-      bulletin = user.bulletins.build(
-        title: Faker::Commerce.product_name.truncate(50),
-        description: Faker::Lorem.paragraph_by_chars(number: 350),
-        category_id: category.id
-      )
-      bulletin.image.attach(io: file, filename: "#{user.id}_#{category.id}_#{image_filename}", content_type: 'image/jpeg')
-      bulletin.save!
-      sleep 1
+      Rails.root.join('test', 'fixtures', 'files', dir_name, image_filename).open do |file|
+        bulletin = user.bulletins.build(
+          title: Faker::Commerce.product_name.truncate(50),
+          description: Faker::Lorem.paragraph_by_chars(number: 350),
+          category_id: category.id
+        )
+        bulletin.image.attach(io: file, filename: "#{user.id}_#{category.id}_#{image_filename}", content_type: 'image/jpeg')
+        bulletin.save!
+        sleep 1
+        bulletin.moderate!
+        state = states.sample
+        bulletin.publish! if state == 'published'
+        bulletin.archive! if state == 'archived'
+      end
     end
   end
 end

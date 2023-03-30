@@ -7,9 +7,14 @@ en:
       default_message: 'Please check the problems:'
     labels:
       bulletin:
-        description: Description
-        image: Image
         category: Category
+        description: Description
+        edit:
+          description: Description
+          category: Category
+          image: Image
+          title: Title
+        image: Image
         title: Title
       category:
         edit:
@@ -22,16 +27,11 @@ en:
           category: Category
           title: Title
         title: Title
+    options:
+      q:
+        index:
+          state_eq: Состояния
     'no': 'No'
-    placeholders:
-      defaults:
-        email: Email
-        new:
-          email: Email
-          password: Password
-          password_confirmation: Password confirmation
-        password: Password
-        password_confirmation: Password confirmation
     required:
       html: '<abbr title="required">*</abbr>'
       mark: "*"
