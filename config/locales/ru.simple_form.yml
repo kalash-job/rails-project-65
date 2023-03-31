@@ -7,6 +7,15 @@ ru:
           body: Content
     error_notification:
       default_message: 'Пожалуйста, исправьте ошибки:'
+    hints:
+      q:
+        index:
+          category_id_eq: Выбрать категорию
+          title_cont: Искать по названию объявления
+        show:
+          title_cont: Искать по названию объявления
+          state_eq: По состоянию
+        state_eq: По состоянию
     labels:
       bulletin:
         category: Категория

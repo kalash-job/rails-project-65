@@ -1,0 +1,14 @@
+---
+en:
+  activerecord:
+    attributes:
+      bulletin:
+        title: Title
+        description: Description
+        category: Category
+        image: Image
+        state/under_moderation: Under moderation
+        state/rejected: Rejected
+        state/draft: Draft
+        state/published: Published
+        state/archived: Archived

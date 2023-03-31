@@ -5,6 +5,15 @@ en:
       attributes:
     error_notification:
       default_message: 'Please check the problems:'
+    hints:
+      q:
+        index:
+          category_id_eq: Choose category
+          title_cont: Search by bulletin name
+        show:
+          title_cont: Search by bulletin name
+          state_eq: By state
+        state_eq: By state
     labels:
       bulletin:
         category: Category
