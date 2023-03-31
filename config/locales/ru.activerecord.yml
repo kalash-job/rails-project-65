@@ -3,12 +3,12 @@ ru:
   activerecord:
     attributes:
       bulletin:
-        title: Заголовок
-        description: Описание
         category: Категория
+        description: Описание
         image: Фотография
-        state/under_moderation: На модерации
-        state/rejected: Возвращено
+        state/archived: В архиве
         state/draft: Черновик
         state/published: Опубликовано
-        state/archived: В архиве
+        state/rejected: Возвращено
+        state/under_moderation: На модерации
+        title: Заголовок

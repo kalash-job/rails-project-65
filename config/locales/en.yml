@@ -3,21 +3,6 @@ en:
   buttons:
     reset: Reset
     search: Search
-  date:
-    abbr_month_names:
-      -
-      - Jan
-      - Feb
-      - Mar
-      - Apr
-      - May
-      - Jun
-      - Jul
-      - Aug
-      - Sep
-      - Oct
-      - Nov
-      - Dec
   datetime:
     distance_in_words:
       about_x_hours:
@@ -61,7 +46,6 @@ en:
       flash:
         non_authenticated_user: The action is available only to registered users
         not_authorized: There are no rights to perform the requested action
-  select_category: Select Category
   web:
     admin:
       admins:
@@ -70,31 +54,31 @@ en:
           bulletin_created: Creation date
           bulletin_name: Bulletin name
           bulletins_under_moderation: Bulletins on moderation
-          confirm_rejecting: Confirm rejecting
           confirm_archiving: Confirm archiving
+          confirm_rejecting: Confirm rejecting
           title: Admin panel
+          to_archive: Archive
           to_publish: Publish
           to_reject: Reject
-          to_archive: Archive
       bulletins:
         archive:
           failure: Bulletin was not archived
           success: Bulletin has been archived
         index:
-          all_bulletins: All bulletins
           actions: Actions
+          all_bulletins: All bulletins
+          archived: Archived
           bulletin_created: Creation date
           bulletin_name: Bulletin name
           bulletin_state: Bulletin state
-          title: Admin panel - All bulletins
           confirm_archiving: Confirm archiving
-          show: Show
-          to_archive: Archive
-          archived: Archived
           draft: Draft
-          under_moderation: On moderate
           published: Published
           rejected: Rejected
+          show: Show
+          title: Admin panel - All bulletins
+          to_archive: Archive
+          under_moderation: On moderate
         publish:
           failure: Bulletin was not published
           success: Bulletin was successfully published
@@ -102,16 +86,6 @@ en:
           failure: Bulletin was not rejected
           success: Bulletin was successfully rejected
       categories:
-        index:
-          title: Admin panel - All categories
-          all_categories: All categories
-          add_category: Add category
-          category_id: Id
-          category_name: Name
-          actions: Actions
-          edit: Edit
-          delete: Delete
-          confirm_deleting: Confirm deleting
         create:
           failure: Category has not been created
           success: Category has been created successfully
@@ -121,6 +95,16 @@ en:
         edit:
           edit_category: Edit category
           title: Admin panel - Edit Category
+        index:
+          actions: Actions
+          add_category: Add category
+          all_categories: All categories
+          category_id: Id
+          category_name: Name
+          confirm_deleting: Confirm deleting
+          delete: Delete
+          edit: Edit
+          title: Admin panel - All categories
         new:
           new_category: New Category
           title: Admin panel - New Category
@@ -129,9 +113,9 @@ en:
           success: Category has been updated successfully
       shared:
         nav:
-          bulletins_under_moderation: Bulletins on moderation
           all_bulletins: All bulletins
           all_categories: All categories
+          bulletins_under_moderation: Bulletins on moderation
     auth:
       callback:
         failure: You have not entered account
@@ -158,14 +142,14 @@ en:
         title: Add bulletin
       shared:
         bulletins_filter:
+          archived: Archived
           category: Choose a category
+          draft: Draft
+          published: Published
+          rejected: Rejected
           select_category: Select Category
           title: Search by title
-          draft: Draft
           under_moderation: On moderation
-          published: Published
-          archived: Archived
-          rejected: Rejected
       show:
         title: Page of bulletin
       update:
@@ -184,21 +168,25 @@ en:
         edit: Edit
         moderate: Moderate
         my_bulletins: My bulletins
-        under_moderation: On moderate
         published: Published
         rejected: Rejected
         show: Show
         title: My bulletins
         to_archive: Archive
+        under_moderation: On moderate
+    sessions:
+      destroy:
+        failure: You have not logged out of your account
+        success: You have successfully logged out of your account
     shared:
       bulletins_filter:
-        category: Choose a category
-        select_category: Select Category
-        title: Search by title
-        draft: Draft
-        under_moderation: On moderation
-        published: Published
         archived: Archived
+        category: Choose a category
+        draft: Draft
+        published: Published
         rejected: Rejected
+        select_category: Select Category
         select_state: Select state
         state: By state
+        title: Search by title
+        under_moderation: On moderation

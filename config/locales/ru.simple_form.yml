@@ -1,10 +1,6 @@
 ---
 ru:
   simple_form:
-    activerecord:
-      attributes:
-        post:
-          body: Content
     error_notification:
       default_message: 'Пожалуйста, исправьте ошибки:'
     hints:
@@ -13,16 +9,16 @@ ru:
           category_id_eq: Выбрать категорию
           title_cont: Искать по названию объявления
         show:
-          title_cont: Искать по названию объявления
           state_eq: По состоянию
+          title_cont: Искать по названию объявления
         state_eq: По состоянию
     labels:
       bulletin:
         category: Категория
         description: Описание
         edit:
-          description: Описание
           category: Категория
+          description: Описание
           image: Изображение
           title: Название
         image: Изображение
@@ -34,17 +30,17 @@ ru:
           name: Название
       defaults:
         new:
-          description: Описание
           category: Категория
+          description: Описание
           title: Название
         title: Название
+    'no': Нет
     options:
       q:
         index:
           state_eq: Состояния
-    'no': Нет
     required:
-      html: '<abbr title="required">*</abbr>'
+      html: <abbr title="required">*</abbr>
       mark: "*"
       text: обязательное
     'yes': Да

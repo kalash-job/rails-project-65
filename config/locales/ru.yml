@@ -3,21 +3,6 @@ ru:
   buttons:
     reset: Сбросить
     search: Найти
-  date:
-    abbr_month_names:
-      -
-      - Янв
-      - Февр
-      - Март
-      - Апр
-      - Мая
-      - Июн
-      - Июл
-      - Авг
-      - Сент
-      - Окт
-      - Нояб
-      - Дек
   datetime:
     distance_in_words:
       about_x_hours:
@@ -77,31 +62,31 @@ ru:
           bulletin_created: Дата создания
           bulletin_name: Заголовок
           bulletins_under_moderation: Объявления на модерации
-          title: Панель администрирования
-          confirm_rejecting: Подтвердите возврат
           confirm_archiving: Подтвердите перенос в архив
+          confirm_rejecting: Подтвердите возврат
+          title: Панель администрирования
+          to_archive: В архив
           to_publish: Опубликовать
           to_reject: Вернуть
-          to_archive: В архив
       bulletins:
         archive:
           failure: Объявление не отправилось в архив
           success: Объявление отправилось в архив
         index:
-          all_bulletins: Все объявления
           actions: Действия
+          all_bulletins: Все объявления
+          archived: Архивировано
           bulletin_created: Дата создания
           bulletin_name: Заголовок
           bulletin_state: Состояние
-          title: Панель администрирования - Все объявления
           confirm_archiving: Подтвердите перенос в архив
-          show: Показать
-          to_archive: В архив
-          archived: Архивировано
           draft: Черновик
-          under_moderation: На модерации
           published: Опубликовано
           rejected: Возвращено
+          show: Показать
+          title: Панель администрирования - Все объявления
+          to_archive: В архив
+          under_moderation: На модерации
         publish:
           failure: Объявление не было опубликовано
           success: Объявление было успешно опубликовано
@@ -109,16 +94,6 @@ ru:
           failure: Объявление не было возвращено
           success: Объявление было успешно возвращено
       categories:
-        index:
-          title: Панель администрирования - Все категории
-          all_categories: Все категории
-          add_category: Добавить категорию
-          category_id: Id
-          category_name: Название
-          actions: Действия
-          edit: Редактировать
-          delete: Удалить
-          confirm_deleting: Подтвердите удаление
         create:
           failure: Категория не была создана
           success: Категория была успешно создана
@@ -128,6 +103,16 @@ ru:
         edit:
           edit_category: Редактировать категорию
           title: Панель администрирования - Редактировать категорию
+        index:
+          actions: Действия
+          add_category: Добавить категорию
+          all_categories: Все категории
+          category_id: Id
+          category_name: Название
+          confirm_deleting: Подтвердите удаление
+          delete: Удалить
+          edit: Редактировать
+          title: Панель администрирования - Все категории
         new:
           new_category: Новая категория
           title: Панель администрирования - Новая категория
@@ -136,9 +121,9 @@ ru:
           success: Категория была успешно обновлена
       shared:
         nav:
-          bulletins_under_moderation: Объявления на модерации
           all_bulletins: Все объявления
           all_categories: Все категории
+          bulletins_under_moderation: Объявления на модерации
     auth:
       callback:
         failure: Вам не удалось войти в аккаунт
@@ -165,14 +150,14 @@ ru:
         title: Добавить объявление
       shared:
         bulletins_filter:
+          archived: Архивировано
           category: Выбрать категорию
+          draft: Черновик
+          published: Опубликовано
+          rejected: Возвращено
           select_category: Выбрать категорию
           title: Искать по названию объявления
-          draft: Черновик
           under_moderation: На модерации
-          published: Опубликовано
-          archived: Архивировано
-          rejected: Возвращено
       show:
         title: Страница объявления
       update:
@@ -191,25 +176,25 @@ ru:
         edit: Редактировать
         moderate: Модерировать
         my_bulletins: Мои объявления
-        under_moderation: На модерации
         published: Опубликовано
         rejected: Возвращено
         show: Показать
         title: Мои объявления
         to_archive: Архивировать
+        under_moderation: На модерации
     sessions:
       destroy:
         failure: Вам не удалось выйти из аккаунта
         success: Вы успешно вышли из аккаунта
     shared:
       bulletins_filter:
-        category: Выбрать категорию
-        select_category: Выбрать категорию
-        title: Искать по названию объявления
-        draft: Черновик
-        under_moderation: На модерации
-        published: Опубликовано
         archived: Архивировано
+        category: Выбрать категорию
+        draft: Черновик
+        published: Опубликовано
         rejected: Возвращено
+        select_category: Выбрать категорию
         select_state: Выбрать состояние
         state: По состоянию
+        title: Искать по названию объявления
+        under_moderation: На модерации

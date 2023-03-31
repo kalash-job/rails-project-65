@@ -1,8 +1,6 @@
 ---
 en:
   simple_form:
-    activerecord:
-      attributes:
     error_notification:
       default_message: 'Please check the problems:'
     hints:
@@ -11,16 +9,16 @@ en:
           category_id_eq: Choose category
           title_cont: Search by bulletin name
         show:
-          title_cont: Search by bulletin name
           state_eq: By state
+          title_cont: Search by bulletin name
         state_eq: By state
     labels:
       bulletin:
         category: Category
         description: Description
         edit:
-          description: Description
           category: Category
+          description: Description
           image: Image
           title: Title
         image: Image
@@ -32,17 +30,17 @@ en:
           name: Name
       defaults:
         new:
-          description: Description
           category: Category
+          description: Description
           title: Title
         title: Title
+    'no': 'No'
     options:
       q:
         index:
           state_eq: Состояния
-    'no': 'No'
     required:
-      html: '<abbr title="required">*</abbr>'
+      html: <abbr title="required">*</abbr>
       mark: "*"
       text: required
     'yes': 'Yes'
