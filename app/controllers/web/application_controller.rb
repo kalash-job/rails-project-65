@@ -17,5 +17,4 @@ class Web::ApplicationController < ApplicationController
   def user_not_authorized
     redirect_to root_path, alert: t('layouts.web.flash.not_authorized')
   end
-
 end
