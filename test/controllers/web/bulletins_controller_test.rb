@@ -39,7 +39,7 @@ class BulletinsControllerTest < ActionDispatch::IntegrationTest
     bulletin = Bulletin.find_by(@searching_attrs.merge(user_id: current_user.id))
 
     assert { bulletin }
-    assert_redirected_to root_url
+    assert_redirected_to profile_url
   end
 
   test 'should not create bulletin without login' do

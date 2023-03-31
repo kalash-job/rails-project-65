@@ -4,7 +4,7 @@ require 'test_helper'
 
 class Web::Admin::AdminsControllerTest < ActionDispatch::IntegrationTest
   test 'should get index' do
-    get web_admin_admins_index_url
+    get admin_root_url
     assert_response :success
   end
 end
