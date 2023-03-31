@@ -34,7 +34,7 @@
                   = link_to moderate_bulletin_path(bulletin), data: { turbo_method: 'patch' }, class: 'me-2' do
                     = t('.moderate')
                 - if bulletin.may_archive?
-                  = link_to archive_admin_bulletin_path(bulletin),
+                  = link_to archive_bulletin_path(bulletin),
                           data: { turbo_method: 'patch', turbo_confirm: t('.confirm_archiving') }, class: 'text-danger' do
                     = t('.to_archive')
       .mt-2

@@ -51,6 +51,15 @@ class Web::BulletinsController < Web::ApplicationController
     end
   end
 
+  def archive
+    @bulletin = Bulletin.find params[:id]
+    if @bulletin.archive!
+      redirect_to profile_path, notice: t('.success')
+    else
+      redirect_to profile_path, alert: t('.failure')
+    end
+  end
+
   private
 
   def bulletin_params

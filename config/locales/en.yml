@@ -128,6 +128,10 @@ en:
           bulletins_under_moderation: Bulletins on moderation
           all_bulletins: All bulletins
           all_categories: All categories
+    auth:
+      callback:
+        failure: You have not entered account
+        success: You have entered account successfully
     bulletins:
       archive:
         failure: Bulletin was not archived
@@ -159,6 +163,8 @@ en:
           published: Published
           archived: Archived
           rejected: Rejected
+      show:
+        title: Page of bulletin
       update:
         failure: Bulletin has not been updated
         success: Bulletin has been updated successfully

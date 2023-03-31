@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
     resources :bulletins, only: %i[index show new create edit update] do
       member do
-        patch :moderate
+        patch :moderate, :archive
       end
     end
 
