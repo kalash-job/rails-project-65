@@ -57,6 +57,10 @@ en:
         sign_in: Sign in
         sign_out: Sign out
         title: Classifieds Platform
+    web:
+      flash:
+        non_authenticated_user: The action is available only to registered users
+        not_authorized: There are no rights to perform the requested action
   select_category: Select Category
   web:
     admin:
@@ -151,7 +155,6 @@ en:
         success: Bulletin has been submitted for moderation
       new:
         add_bulletin: Add bulletin
-        non_authenticated_user: The action is available only to registered users
         title: Add bulletin
       shared:
         bulletins_filter:
@@ -181,7 +184,6 @@ en:
         edit: Edit
         moderate: Moderate
         my_bulletins: My bulletins
-        non_authenticated_user: The action is available only to registered users
         under_moderation: On moderate
         published: Published
         rejected: Rejected

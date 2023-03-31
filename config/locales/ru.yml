@@ -65,6 +65,10 @@ ru:
         sign_in: Войти
         sign_out: Выйти
         title: Доска объявлений
+    web:
+      flash:
+        non_authenticated_user: Действие доступно только зарегистрированным пользователям
+        not_authorized: Отсутствуют права для выполнения запрошенного действия
   web:
     admin:
       admins:
@@ -158,7 +162,6 @@ ru:
         success: Объявление отправлено на модерацию
       new:
         add_bulletin: Добавить объявление
-        non_authenticated_user: Действие доступно только зарегистрированным пользователям
         title: Добавить объявление
       shared:
         bulletins_filter:
@@ -188,7 +191,6 @@ ru:
         edit: Редактировать
         moderate: Модерировать
         my_bulletins: Мои объявления
-        non_authenticated_user: Действие доступно только зарегистрированным пользователям
         under_moderation: На модерации
         published: Опубликовано
         rejected: Возвращено

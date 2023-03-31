@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Web::BulletinsController < Web::ApplicationController
-  before_action :authenticate_user!, only: %i[new create]
+  before_action :authenticate_user!, only: %i[new create edit update moderate archive]
   def index
     @query = Bulletin.ransack(params[:q])
     @bulletins = @query.result.with_attached_image.published.by_creation_date_desc.page(params[:page])
@@ -18,6 +18,7 @@ class Web::BulletinsController < Web::ApplicationController
 
   def edit
     @bulletin = Bulletin.find(params[:id])
+    authorize @bulletin
   end
 
   def create
@@ -33,6 +34,7 @@ class Web::BulletinsController < Web::ApplicationController
 
   def update
     @bulletin = Bulletin.find params[:id]
+    authorize @bulletin
 
     if @bulletin.update(bulletin_params)
       redirect_to profile_path, notice: t('.success')
@@ -44,6 +46,8 @@ class Web::BulletinsController < Web::ApplicationController
 
   def moderate
     @bulletin = Bulletin.find params[:id]
+    authorize @bulletin
+
     if @bulletin.moderate!
       redirect_to profile_path, notice: t('.success')
     else
@@ -53,6 +57,8 @@ class Web::BulletinsController < Web::ApplicationController
 
   def archive
     @bulletin = Bulletin.find params[:id]
+    authorize @bulletin
+
     if @bulletin.archive!
       redirect_to profile_path, notice: t('.success')
     else

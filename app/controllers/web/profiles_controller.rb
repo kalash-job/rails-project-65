@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Web::ProfilesController < Web::ApplicationController
-  before_action :authenticate_user!, only: %i[show]
+  before_action :authenticate_user!
 
   def show
     @query = Bulletin.ransack(params[:q])
