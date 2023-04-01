@@ -2,7 +2,6 @@
 
 class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   def index
-    # TODO: add checking of admin access
     @query = Bulletin.ransack(params[:q])
     @bulletins = @query.result.by_creation_date_desc.page(params[:page])
   end
