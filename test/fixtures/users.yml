@@ -11,9 +11,11 @@
 #
 
 one:
-  name: MyString
-  email: MyString
+  name: MyString first
+  email: first@email.com
+  admin: true
 
 two:
   name: MyString
-  email: MyString
+  email: second@email.com
+  admin: false
