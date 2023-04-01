@@ -10,9 +10,9 @@ class Web::Admin::BulletinsController < Web::Admin::ApplicationController
   def archive
     @bulletin = Bulletin.find params[:id]
     if @bulletin.archive!
-      redirect_to request.referer, notice: t('.success')
+      redirect_back_or_to admin_bulletins_path, notice: t('.success')
     else
-      redirect_to request.referer, alert: t('.failure')
+      redirect_back_or_to admin_bulletins_path, alert: t('.failure')
     end
   end
 
