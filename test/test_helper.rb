@@ -12,7 +12,9 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  parallelize_teardown do |_i|
+    FileUtils.rm_rf(ActiveStorage::Blob.services.fetch(:test_fixtures).root)
+  end
 end
 
 class ActionDispatch::IntegrationTest
@@ -37,10 +39,5 @@ class ActionDispatch::IntegrationTest
 
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
-  end
-
-  def user_is_admin!(user)
-    user.admin = true
-    user.save!
   end
 end

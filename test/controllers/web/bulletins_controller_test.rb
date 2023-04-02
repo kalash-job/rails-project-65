@@ -12,9 +12,14 @@ class BulletinsControllerTest < ActionDispatch::IntegrationTest
       title:,
       description:,
       category_id:,
-      image: fixture_file_upload('auto/image1.jpg', 'image/jpeg')
+      image: fixture_file_upload('image1.jpg', 'image/jpeg')
     }
     @searching_attrs = { title:, description:, category_id: }
+  end
+
+  def after_teardown
+    super
+    FileUtils.rm_rf(ActiveStorage::Blob.service.root)
   end
 
   test 'should get index' do
