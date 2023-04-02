@@ -27,9 +27,39 @@ one:
   description: MyText
   category: one
   user: one
+  state: draft
 
-two:
+draft_bulletin:
+  title: MyString
+  description: MyText
+  category: one
+  user: one
+  state: draft
+
+under_moderation_bulletin:
   title: MyString
   description: MyText
   category: two
   user: two
+  state: under_moderation
+
+published_bulletin:
+  title: MyString
+  description: MyText
+  category: two
+  user: two
+  state: published
+
+archived_bulletin:
+  title: MyString
+  description: MyText
+  category: two
+  user: two
+  state: archived
+
+rejected_bulletin:
+  title: MyString
+  description: MyText
+  category: two
+  user: two
+  state: rejected

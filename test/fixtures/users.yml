@@ -13,9 +13,14 @@
 one:
   name: MyString first
   email: first@email.com
-  admin: true
+  admin: false
 
 two:
-  name: MyString
+  name: MyString second
   email: second@email.com
   admin: false
+
+admin:
+  name: MyString second
+  email: second@email.com
+  admin: true
