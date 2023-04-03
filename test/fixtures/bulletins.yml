@@ -23,43 +23,43 @@
 #
 
 one:
-  title: MyString
-  description: MyText
+  title: <%= Faker::Lorem.paragraph_by_chars(number:40) %>
+  description: <%= Faker::Lorem.paragraph_by_chars(number:500) %>
   category: one
   user: one
   state: draft
 
 draft_bulletin:
-  title: MyString
-  description: MyText
+  title: <%= Faker::Lorem.paragraph_by_chars(number:40) %>
+  description: <%= Faker::Lorem.paragraph_by_chars(number:500) %>
   category: one
-  user: one
+  user: two
   state: draft
 
 under_moderation_bulletin:
-  title: MyString
-  description: MyText
+  title: <%= Faker::Lorem.paragraph_by_chars(number:40) %>
+  description: <%= Faker::Lorem.paragraph_by_chars(number:500) %>
   category: two
   user: two
   state: under_moderation
 
 published_bulletin:
-  title: MyString
-  description: MyText
+  title: <%= Faker::Lorem.paragraph_by_chars(number:40) %>
+  description: <%= Faker::Lorem.paragraph_by_chars(number:500) %>
   category: two
   user: two
   state: published
 
 archived_bulletin:
-  title: MyString
-  description: MyText
+  title: <%= Faker::Lorem.paragraph_by_chars(number:40) %>
+  description: <%= Faker::Lorem.paragraph_by_chars(number:500) %>
   category: two
   user: two
   state: archived
 
 rejected_bulletin:
-  title: MyString
-  description: MyText
+  title: <%= Faker::Lorem.paragraph_by_chars(number:40) %>
+  description: <%= Faker::Lorem.paragraph_by_chars(number:500) %>
   category: two
   user: two
   state: rejected
