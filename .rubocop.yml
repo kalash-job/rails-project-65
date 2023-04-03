@@ -1,13 +1,8 @@
 ---
 
-require:
-  - rubocop-rails
-  - rubocop-performance
-
 AllCops:
-  NewCops: enable
   TargetRubyVersion: 3.1.2
-  TargetRailsVersion: 7
+  NewCops: enable
   DisplayCopNames: true
   Exclude:
     - 'bin/**'
@@ -19,6 +14,9 @@ AllCops:
     - 'node_modules/**/*'
     - 'tmp/**/*'
   SuggestExtensions: false
+
+require:
+  - rubocop-rails
 
 Rails:
   Enabled: true
@@ -45,7 +43,4 @@ Metrics/BlockLength:
   Enabled: false
 
 Style/AsciiComments:
-  Enabled: false
-
-Metrics/ParameterLists:
   Enabled: false
