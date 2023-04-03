@@ -48,3 +48,4 @@
 .byebug_history
 .tool-versions
 .env
+/coverage/
