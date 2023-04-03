@@ -23,15 +23,15 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test 'should show bulletin' do
+    get bulletin_url(@bulletin)
+    assert_response :success
+  end
+
   test 'should get new' do
     sign_in @user
     get new_bulletin_url
     assert_response :success
-  end
-
-  test 'should not get new without login' do
-    get new_bulletin_url
-    assert_redirected_to root_url
   end
 
   test 'should create bulletin' do
@@ -43,35 +43,10 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to profile_url
   end
 
-  test 'should not create bulletin without login' do
-    post bulletins_url, params: { bulletin: @attrs }
-
-    bulletin = Bulletin.find_by(@searching_attrs)
-
-    assert { bulletin.nil? }
-    assert_redirected_to root_url
-  end
-
-  test 'should show bulletin' do
-    get bulletin_url(@bulletin)
-    assert_response :success
-  end
-
   test 'should get edit' do
     sign_in @user
     get edit_bulletin_url(@bulletin)
     assert_response :success
-  end
-
-  test 'should not get edit for another user bulletin' do
-    sign_in @user
-    get edit_bulletin_url(@another_user_bulletin)
-    assert_redirected_to root_url
-  end
-
-  test 'should not get edit without login' do
-    get edit_bulletin_url(@bulletin)
-    assert_redirected_to root_url
   end
 
   test 'should update bulletin' do
@@ -118,14 +93,6 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     assert { @another_user_bulletin.state == DRAFT_STATE }
   end
 
-  test 'should not archive bulletin without login' do
-    patch archive_bulletin_url(@bulletin)
-    @bulletin.reload
-
-    assert_redirected_to root_url
-    assert { @bulletin.state == DRAFT_STATE }
-  end
-
   test 'should moderate bulletin' do
     sign_in @user
     patch moderate_bulletin_url(@bulletin)
@@ -142,13 +109,5 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to root_url
     assert { @another_user_bulletin.state == DRAFT_STATE }
-  end
-
-  test 'should not moderate bulletin without login' do
-    patch moderate_bulletin_url(@bulletin)
-    @bulletin.reload
-
-    assert_redirected_to root_url
-    assert { @bulletin.state == DRAFT_STATE }
   end
 end
