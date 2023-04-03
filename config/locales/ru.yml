@@ -3,32 +3,6 @@ ru:
   buttons:
     reset: Сбросить
     search: Найти
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        few: "%{count} часа"
-        many: "%{count} часов"
-        one: "%{count} час"
-        other: "%{count} часов"
-        zero: "%{count} часов"
-      less_than_x_minutes:
-        few: "%{count} минуты"
-        many: "%{count} минут"
-        one: "%{count} минута"
-        other: "%{count} минут"
-        zero: "%{count} минут"
-      x_days:
-        few: "%{count} дня"
-        many: "%{count} дней"
-        one: "%{count} день"
-        other: "%{count} дней"
-        zero: "%{count} дней"
-      x_minutes:
-        few: "%{count} минуты"
-        many: "%{count} минут"
-        one: "%{count} минута"
-        other: "%{count} минут"
-        zero: "%{count} минут"
   helpers:
     submit:
       bulletin:

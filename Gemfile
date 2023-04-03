@@ -67,8 +67,6 @@ gem 'faker'
 
 gem 'flash_rails_messages'
 
-gem 'i18n'
-
 gem 'kaminari'
 
 gem 'omniauth-github'
@@ -76,6 +74,8 @@ gem 'omniauth-github'
 gem 'omniauth-rails_csrf_protection'
 
 gem 'pundit'
+
+gem 'rails-i18n'
 
 gem 'ransack'
 

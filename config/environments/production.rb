@@ -94,4 +94,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.active_storage.track_variants = true
+  config.i18n.available_locales = %i[ru en]
 end

@@ -71,4 +71,5 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.active_storage.track_variants = true
+  config.i18n.available_locales = %i[ru en]
 end

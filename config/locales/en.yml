@@ -3,24 +3,6 @@ en:
   buttons:
     reset: Reset
     search: Search
-  datetime:
-    distance_in_words:
-      about_x_hours:
-        one: "%{count} hour"
-        other: "%{count} hours"
-        zero: "%{count} hours"
-      less_than_x_minutes:
-        one: "%{count} minute"
-        other: "%{count} minutes"
-        zero: "%{count} minute"
-      x_days:
-        one: "%{count} day"
-        other: "%{count} days"
-        zero: "%{count} days"
-      x_minutes:
-        one: "%{count} minute"
-        other: "%{count} minutes"
-        zero: "%{count} minutes"
   helpers:
     submit:
       bulletin:
