@@ -13,3 +13,6 @@ one:
 
 two:
   name: <%= Faker::Lorem.paragraph_by_chars(number:30) %>
+
+without_bulletins:
+  name: <%= Faker::Lorem.paragraph_by_chars(number:30) %>

@@ -8,4 +8,9 @@ class Web::ProfilesControllerTest < ActionDispatch::IntegrationTest
     get profile_url
     assert_response :success
   end
+
+  test 'should not get show without login' do
+    get profile_url
+    assert_redirected_to root_url
+  end
 end
