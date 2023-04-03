@@ -6,6 +6,7 @@ SimpleCov.start
 ENV['RAILS_ENV'] ||= 'test'
 require_relative '../config/environment'
 require 'rails/test_help'
+require 'rack_session_access/capybara'
 
 OmniAuth.config.test_mode = true
 class ActiveSupport::TestCase
