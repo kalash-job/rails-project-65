@@ -106,6 +106,8 @@ end
 group :development do
   gem 'annotate'
 
+  gem 'bullet'
+
   gem 'i18n-debug'
 
   gem 'i18n-tasks', '~> 1.0.12'
