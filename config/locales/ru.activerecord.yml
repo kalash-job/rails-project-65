@@ -12,3 +12,7 @@ ru:
         state/rejected: Возвращено
         state/under_moderation: На модерации
         title: Заголовок
+    models:
+      bulletin: Объявление
+      category: Категория
+      user: Пользователь

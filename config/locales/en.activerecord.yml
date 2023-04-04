@@ -12,3 +12,7 @@ en:
         state/rejected: Rejected
         state/under_moderation: Under moderation
         title: Title
+    models:
+      bulletin: Bulletin
+      category: Category
+      user: User
