@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class BulletinPolicy < ApplicationPolicy
+  def show?
+    record.published? || owner? || admin?
+  end
+
   def update?
     owner?
   end

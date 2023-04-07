@@ -24,7 +24,24 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should show bulletin' do
-    get bulletin_url(@bulletin)
+    get bulletin_url(bulletins(:published_bulletin))
+    assert_response :success
+  end
+
+  test 'should not show unpublished bulletin' do
+    get bulletin_url @bulletin
+    assert_redirected_to root_url
+  end
+
+  test 'should show unpublished bulletin to owner' do
+    sign_in @user
+    get bulletin_url @bulletin
+    assert_response :success
+  end
+
+  test 'should show unpublished bulletin to admin' do
+    sign_in users(:admin)
+    get bulletin_url @bulletin
     assert_response :success
   end
 
