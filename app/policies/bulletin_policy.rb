@@ -20,6 +20,6 @@ class BulletinPolicy < ApplicationPolicy
   private
 
   def owner?
-    user&.id == record.user.id
+    user&.id == record.user_id
   end
 end

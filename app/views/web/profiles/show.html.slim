@@ -22,7 +22,7 @@
               td
                 = bulletin.title
               td
-                = t(".#{bulletin.state}")
+                = bulletin.aasm.human_state
               td
                 = time_ago_in_words bulletin.created_at
               td

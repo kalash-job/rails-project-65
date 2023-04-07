@@ -49,18 +49,13 @@ ru:
         index:
           actions: Действия
           all_bulletins: Все объявления
-          archived: Архивировано
           bulletin_created: Дата создания
           bulletin_name: Заголовок
           bulletin_state: Состояние
           confirm_archiving: Подтвердите перенос в архив
-          draft: Черновик
-          published: Опубликовано
-          rejected: Возвращено
           show: Показать
           title: Панель администрирования - Все объявления
           to_archive: В архив
-          under_moderation: На модерации
         publish:
           failure: Объявление не было опубликовано
           success: Объявление было успешно опубликовано
@@ -141,21 +136,16 @@ ru:
       show:
         actions: Действия
         add_bulletin: Добавить объявление
-        archived: Архивировано
         bulletin_created: Дата создания
         bulletin_name: Заголовок
         bulletin_state: Состояние
         confirm_archiving: Подтвердить архивирование
-        draft: Черновик
         edit: Редактировать
         moderate: Модерировать
         my_bulletins: Мои объявления
-        published: Опубликовано
-        rejected: Возвращено
         show: Показать
         title: Мои объявления
         to_archive: Архивировать
-        under_moderation: На модерации
     sessions:
       destroy:
         failure: Вам не удалось выйти из аккаунта

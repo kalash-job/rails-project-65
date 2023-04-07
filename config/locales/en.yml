@@ -49,18 +49,13 @@ en:
         index:
           actions: Actions
           all_bulletins: All bulletins
-          archived: Archived
           bulletin_created: Creation date
           bulletin_name: Bulletin name
           bulletin_state: Bulletin state
           confirm_archiving: Confirm archiving
-          draft: Draft
-          published: Published
-          rejected: Rejected
           show: Show
           title: Admin panel - All bulletins
           to_archive: Archive
-          under_moderation: On moderate
         publish:
           failure: Bulletin was not published
           success: Bulletin was successfully published
@@ -141,21 +136,16 @@ en:
       show:
         actions: Actions
         add_bulletin: Add bulletin
-        archived: Archived
         bulletin_created: Creation date
         bulletin_name: Bulletin name
         bulletin_state: Bulletin state
         confirm_archiving: Confirm archiving
-        draft: Draft
         edit: Edit
         moderate: Moderate
         my_bulletins: My bulletins
-        published: Published
-        rejected: Rejected
         show: Show
         title: My bulletins
         to_archive: Archive
-        under_moderation: On moderate
     sessions:
       destroy:
         failure: You have not logged out of your account
