@@ -17,13 +17,3 @@ fourth_image_attachment:
   name: image
   record: published_bulletin (Bulletin)
   blob: first_image_blob
-
-fifth_image_attachment:
-  name: image
-  record: archived_bulletin (Bulletin)
-  blob: first_image_blob
-
-sixth_image_attachment:
-  name: image
-  record: rejected_bulletin (Bulletin)
-  blob: first_image_blob

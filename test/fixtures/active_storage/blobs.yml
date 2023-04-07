@@ -5,7 +5,3 @@ second_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image2.jpg', ser
 third_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image3.jpg', service_name:'test_fixtures' %>
 
 fourth_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image4.jpg', service_name:'test_fixtures' %>
-
-fifth_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image5.jpg', service_name:'test_fixtures' %>
-
-sixth_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image6.jpg', service_name:'test_fixtures' %>

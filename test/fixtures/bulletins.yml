@@ -49,17 +49,3 @@ published_bulletin:
   category: two
   user: two
   state: published
-
-archived_bulletin:
-  title: <%= Faker::Lorem.paragraph_by_chars(number:40) %>
-  description: <%= Faker::Lorem.paragraph_by_chars(number:500) %>
-  category: two
-  user: two
-  state: archived
-
-rejected_bulletin:
-  title: <%= Faker::Lorem.paragraph_by_chars(number:40) %>
-  description: <%= Faker::Lorem.paragraph_by_chars(number:500) %>
-  category: two
-  user: two
-  state: rejected
