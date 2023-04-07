@@ -1,4 +1,4 @@
 - content_for :title do
   = t('.title')
 h1.h2.mb-4 = t('.edit_category')
-== render 'web/admin/categories/shared/form', category: @category, url: admin_category_path(@category)
+== render 'form', category: @category

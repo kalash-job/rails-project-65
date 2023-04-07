@@ -6,7 +6,7 @@
       h2 = t('.bulletins')
       hr
       .p-3.bg-light
-        == render 'web/bulletins/shared/bulletins_filter', query: @query, categories: @categories
+        == render 'bulletins_filter', query: @query, categories: @categories
       .row.mt-2
         - @bulletins.each do |bulletin|
           .col-3.pt-2
