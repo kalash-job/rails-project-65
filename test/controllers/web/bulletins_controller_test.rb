@@ -3,10 +3,6 @@
 require 'test_helper'
 
 class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
-  UNDER_MODERATION_STATE = 'under_moderation'
-  DRAFT_STATE = 'draft'
-  ARCHIVED_STATE = 'archived'
-
   setup do
     @user = users(:one)
     @bulletin = bulletins(:one)
@@ -54,7 +50,7 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
   test 'should create bulletin' do
     sign_in @user
     post bulletins_url, params: { bulletin: @attrs }
-    bulletin = Bulletin.find_by(@searching_attrs.merge(user_id: current_user.id))
+    bulletin = @user.bulletins.find_by(@searching_attrs)
 
     assert { bulletin }
     assert_redirected_to profile_url
@@ -98,7 +94,7 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @bulletin.reload
 
     assert_redirected_to profile_path
-    assert { @bulletin.state == ARCHIVED_STATE }
+    assert { @bulletin.archived? }
   end
 
   test 'should not archive another user bulletin' do
@@ -107,7 +103,7 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @another_user_bulletin.reload
 
     assert_redirected_to root_url
-    assert { @another_user_bulletin.state == DRAFT_STATE }
+    assert { @another_user_bulletin.draft? }
   end
 
   test 'should moderate bulletin' do
@@ -116,7 +112,7 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @bulletin.reload
 
     assert_redirected_to profile_path
-    assert { @bulletin.state == UNDER_MODERATION_STATE }
+    assert { @bulletin.under_moderation? }
   end
 
   test 'should not moderate another user bulletin' do
@@ -125,6 +121,6 @@ class Web::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @another_user_bulletin.reload
 
     assert_redirected_to root_url
-    assert { @another_user_bulletin.state == DRAFT_STATE }
+    assert { @another_user_bulletin.draft? }
   end
 end

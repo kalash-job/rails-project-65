@@ -3,11 +3,6 @@
 require 'test_helper'
 
 class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
-  PUBLISHED_STATE = 'published'
-  UNDER_MODERATION_STATE = 'under_moderation'
-  REJECTED_STATE = 'rejected'
-  ARCHIVED_STATE = 'archived'
-
   setup do
     @under_moderation_bulletin = bulletins(:under_moderation_bulletin)
     @admin = users(:admin)
@@ -25,7 +20,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @under_moderation_bulletin.reload
 
     assert_redirected_to admin_root_url
-    assert { @under_moderation_bulletin.state == REJECTED_STATE }
+    assert { @under_moderation_bulletin.rejected? }
   end
 
   test 'should not reject bulletin if not an admin' do
@@ -34,7 +29,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @under_moderation_bulletin.reload
 
     assert_redirected_to root_url
-    assert { @under_moderation_bulletin.state == UNDER_MODERATION_STATE }
+    assert { @under_moderation_bulletin.under_moderation? }
   end
 
   test 'should not reject bulletin without login' do
@@ -42,7 +37,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @under_moderation_bulletin.reload
 
     assert_redirected_to root_url
-    assert { @under_moderation_bulletin.state == UNDER_MODERATION_STATE }
+    assert { @under_moderation_bulletin.under_moderation? }
   end
 
   test 'should archive bulletin' do
@@ -51,7 +46,7 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @under_moderation_bulletin.reload
 
     assert_redirected_to admin_bulletins_path
-    assert { @under_moderation_bulletin.state == ARCHIVED_STATE }
+    assert { @under_moderation_bulletin.archived? }
   end
 
   test 'should publish bulletin' do
@@ -60,6 +55,6 @@ class Web::Admin::BulletinsControllerTest < ActionDispatch::IntegrationTest
     @under_moderation_bulletin.reload
 
     assert_redirected_to admin_root_url
-    assert { @under_moderation_bulletin.state == PUBLISHED_STATE }
+    assert { @under_moderation_bulletin.published? }
   end
 end
