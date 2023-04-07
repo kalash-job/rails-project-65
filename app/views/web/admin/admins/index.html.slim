@@ -1,36 +1,32 @@
 - content_for :title do
   = t('.title')
-.row
-  .col-md-3
-    = render 'web/admin/shared/nav'
-  .col-md-9
-    h1.h2.mb-4 = t('.bulletins_under_moderation')
-    row.mt-2
-      table.table.table-borderless
-        thead
-          tr
-            th = t('.bulletin_name')
-            th = t('.bulletin_created')
-            th = t('.actions')
-        tbody
-          - @bulletins.each do |bulletin|
-            tr
-              td
-                = link_to bulletin_path(bulletin) do
-                  = bulletin.title
-              td
-                = time_ago_in_words bulletin.created_at
-              td
-                - if bulletin.may_publish?
-                  = link_to publish_admin_bulletin_path(bulletin), data: { turbo_method: 'patch' }, class: 'me-1' do
-                    = t('.to_publish')
-                - if bulletin.may_reject?
-                  = link_to reject_admin_bulletin_path(bulletin),
-                          data: { turbo_method: 'patch', turbo_confirm: t('.confirm_rejecting') }, class: 'me-1' do
-                    = t('.to_reject')
-                - if bulletin.may_archive?
-                  = link_to archive_admin_bulletin_path(bulletin),
-                          data: { turbo_method: 'patch', turbo_confirm: t('.confirm_archiving') }, class: 'text-danger' do
-                    = t('.to_archive')
-      .mt-2
-        = paginate @bulletins
+h1.h2.mb-4 = t('.bulletins_under_moderation')
+row.mt-2
+  table.table.table-borderless
+    thead
+      tr
+        th = t('.bulletin_name')
+        th = t('.bulletin_created')
+        th = t('.actions')
+    tbody
+      - @bulletins.each do |bulletin|
+        tr
+          td
+            = link_to bulletin_path(bulletin) do
+              = bulletin.title
+          td
+            = time_ago_in_words bulletin.created_at
+          td
+            - if bulletin.may_publish?
+              = link_to publish_admin_bulletin_path(bulletin), data: { turbo_method: 'patch' }, class: 'me-1' do
+                = t('.to_publish')
+            - if bulletin.may_reject?
+              = link_to reject_admin_bulletin_path(bulletin),
+                      data: { turbo_method: 'patch', turbo_confirm: t('.confirm_rejecting') }, class: 'me-1' do
+                = t('.to_reject')
+            - if bulletin.may_archive?
+              = link_to archive_admin_bulletin_path(bulletin),
+                      data: { turbo_method: 'patch', turbo_confirm: t('.confirm_archiving') }, class: 'text-danger' do
+                = t('.to_archive')
+  .mt-2
+    = paginate @bulletins
