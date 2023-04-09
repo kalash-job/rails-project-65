@@ -36,6 +36,8 @@ class ApplicationPolicy
     false
   end
 
+  private
+
   def admin?
     user&.admin?
   end
