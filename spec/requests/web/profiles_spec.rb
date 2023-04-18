@@ -3,7 +3,17 @@
 require 'rails_helper'
 
 RSpec.describe 'Web::Profiles', type: :request do
-  describe 'GET /index' do
-    pending "add some examples (or delete) #{__FILE__}"
+  describe 'GET /show' do
+    fixtures :users
+    it 'renders a successful response' do
+      sign_in users(:one)
+      get profile_url
+      expect(response).to be_successful
+    end
+
+    it 'redirects to root_url without sign in' do
+      get profile_url
+      expect(response).to redirect_to(root_url)
+    end
   end
 end
