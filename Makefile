@@ -1,12 +1,17 @@
 tests:
 	bin/rails test
 	bin/rails test:system
+	rspec
 
 check:
 	bin/rails test
 	bin/rails test:system
+	rspec
 	bundle exec rubocop
 	bundle exec slim-lint app/views/
+
+rspec:
+	rspec spec --format documentation
 
 seed:
 	bin/rails db:seed

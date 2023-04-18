@@ -1,0 +1,19 @@
+first_image_attachment:
+  name: image
+  record: one (Bulletin)
+  blob: first_image_blob
+
+second_image_attachment:
+  name: image
+  record: draft_bulletin (Bulletin)
+  blob: first_image_blob
+
+third_image_attachment:
+  name: image
+  record: under_moderation_bulletin (Bulletin)
+  blob: first_image_blob
+
+fourth_image_attachment:
+  name: image
+  record: published_bulletin (Bulletin)
+  blob: first_image_blob

@@ -1,0 +1,30 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer          not null, primary key
+#  admin      :boolean          default(FALSE)
+#  email      :string
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_email  (email) UNIQUE
+#
+
+one:
+  name: <%= Faker::Name.name %>
+  email: <%= Faker::Internet.unique.email %>
+  admin: false
+
+two:
+  name: <%= Faker::Name.name %>
+  email: <%= Faker::Internet.unique.email %>
+  admin: false
+
+admin:
+  name: <%= Faker::Name.name %>
+  email: <%= Faker::Internet.unique.email %>
+  admin: true

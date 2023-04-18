@@ -1,0 +1,7 @@
+first_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image1.jpg', service_name:'test_fixtures' %>
+
+second_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image2.jpg', service_name:'test_fixtures' %>
+
+third_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image3.jpg', service_name:'test_fixtures' %>
+
+fourth_image_blob: <%= ActiveStorage::FixtureSet.blob filename:'image4.jpg', service_name:'test_fixtures' %>

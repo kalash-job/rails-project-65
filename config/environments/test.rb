@@ -61,4 +61,6 @@ Rails.application.configure do
   # config.action_view.annotate_rendered_view_with_filenames = true
   config.i18n.available_locales = %i[ru en]
   config.middleware.use RackSessionAccess::Middleware
+
+  config.active_record.maintain_test_schema = true
 end
