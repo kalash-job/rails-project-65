@@ -35,7 +35,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
       expect(response).to be_successful
     end
 
-    it 'redirects to root_url if bulletin is not published' do
+    it 'redirects to root if bulletin is not published' do
       get bulletin_url(bulletins(:one))
       expect(response).to redirect_to(root_url)
     end
@@ -104,7 +104,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
           user = users(:one)
           sign_in user
           patch bulletin_url(bulletins(:one)), params: { bulletin: valid_attributes }
-          expect(user.bulletins.find_by(searching_attrs)).to_not be_nil
+          expect(user.bulletins.find_by(searching_attrs)).to be_present
         end
 
         it 'redirects to the profile' do
@@ -124,7 +124,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
           expect(user.bulletins.find_by(searching_attrs)).to be_nil
         end
 
-        it 'redirects to root_url' do
+        it 'redirects to root' do
           sign_in users(:one)
           patch bulletin_url(bulletins(:published_bulletin)), params: { bulletin: valid_attributes }
           expect(response).to redirect_to(root_url)
@@ -137,7 +137,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
           expect(users(:one).bulletins.find_by(searching_attrs)).to be_nil
         end
 
-        it 'redirects to root_url' do
+        it 'redirects to root' do
           patch bulletin_url(bulletins(:one)), params: { bulletin: valid_attributes }
           expect(response).to redirect_to(root_url)
         end
@@ -162,7 +162,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
 
   describe 'PATCH /archive' do
     context 'when bulletin belongs to current user' do
-      it 'archives the requested bulletin and redirects to profile_url' do
+      it 'archives the requested bulletin and redirects to profile' do
         sign_in users(:one)
         bulletin = bulletins(:one)
         patch archive_bulletin_url(bulletin)
@@ -173,7 +173,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
     end
 
     context 'when bulletin does not belong to current user' do
-      it 'does not archive the Bulletin and redirects to root_url' do
+      it 'does not archive the Bulletin and redirects to root' do
         sign_in users(:one)
         bulletin = bulletins(:published_bulletin)
         patch archive_bulletin_url(bulletin)
@@ -186,7 +186,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
 
   describe 'PATCH /moderate' do
     context 'when bulletin belongs to current user' do
-      it 'sends on moderation the requested bulletin and redirects to profile_url' do
+      it 'sends on moderation the requested bulletin and redirects to profile' do
         sign_in users(:one)
         bulletin = bulletins(:one)
         patch moderate_bulletin_url(bulletin)
@@ -197,7 +197,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
     end
 
     context 'when bulletin does not belong to current user' do
-      it 'does not send on moderation the Bulletin and redirects to root_url' do
+      it 'does not send on moderation the Bulletin and redirects to root' do
         sign_in users(:one)
         bulletin = bulletins(:draft_bulletin)
         patch moderate_bulletin_url(bulletin)
