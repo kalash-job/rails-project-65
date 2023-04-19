@@ -23,4 +23,8 @@ module AuthHelper
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
+
+  def sign_in_by_id(user_id)
+    page.set_rack_session(user_id:)
+  end
 end
