@@ -1,7 +1,7 @@
 tests:
 	bin/rails test
 	bin/rails test:system
-	rspec
+	bundle exec rspec
 
 check:
 	bin/rails test
@@ -44,4 +44,5 @@ ci-setup:
 	cp -n .env.example .env || true
 	yarn install
 	bundle install --without production development
+	RAILS_ENV=test bin/rails assets:precompile
 	RAILS_ENV=test bin/rails db:prepare
