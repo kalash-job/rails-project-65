@@ -4,12 +4,14 @@ require 'rails_helper'
 
 RSpec.describe 'Web::Bulletins', type: :request do
   fixtures :bulletins, :categories, :users
+
   before do
     @title = Faker::Lorem.paragraph_by_chars(number: 50)
     @long_title = Faker::Lorem.paragraph_by_chars(number: 55)
     @description = Faker::Lorem.paragraph_by_chars(number: 1000)
     @image = fixture_file_upload('image1.jpg', 'image/jpeg')
   end
+
   let(:valid_attributes) do
     { title: @title, description: @description, category_id: categories(:one).id, image: @image }
   end
