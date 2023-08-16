@@ -57,17 +57,12 @@ RSpec.feature 'Bulletins', type: :feature do
     expect(page).to have_content('Объявление отправлено на модерацию')
   end
 
-  context 'For scenarios with js using but Signing in without js using.' do
-    before do
-      sign_in_by_id users(:one).id
-      visit profile_path
+  scenario 'user can archive bulletin', driver: :selenium_chrome_headless do
+    sign_in_by_id users(:one).id
+    visit profile_path
+    accept_confirm('Подтвердить архивирование') do
+      click_on 'Архивировать', match: :first
     end
-
-    scenario 'user can archive bulletin', driver: :selenium_chrome_headless do
-      accept_confirm('Подтвердить архивирование') do
-        click_on 'Архивировать', match: :first
-      end
-      expect(page).to have_content('Объявление отправилось в архив')
-    end
+    expect(page).to have_content('Объявление отправилось в архив')
   end
 end
