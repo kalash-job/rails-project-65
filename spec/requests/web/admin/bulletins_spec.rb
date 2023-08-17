@@ -20,7 +20,7 @@ RSpec.describe 'Web::Admin::Bulletins', type: :request do
         bulletin = bulletins(:under_moderation_bulletin)
         patch reject_admin_bulletin_url(bulletin)
         bulletin.reload
-        expect(bulletin.rejected?).to be_truthy
+        expect(bulletin.rejected?).to eq(true)
         expect(response).to redirect_to(admin_root_url)
       end
     end
@@ -31,7 +31,7 @@ RSpec.describe 'Web::Admin::Bulletins', type: :request do
         bulletin = bulletins(:under_moderation_bulletin)
         patch reject_admin_bulletin_url(bulletin)
         bulletin.reload
-        expect(bulletin.under_moderation?).to be_truthy
+        expect(bulletin.under_moderation?).to eq(true)
         expect(response).to redirect_to(root_url)
       end
     end
@@ -41,7 +41,7 @@ RSpec.describe 'Web::Admin::Bulletins', type: :request do
         bulletin = bulletins(:under_moderation_bulletin)
         patch reject_admin_bulletin_url(bulletin)
         bulletin.reload
-        expect(bulletin.under_moderation?).to be_truthy
+        expect(bulletin.under_moderation?).to eq(true)
         expect(response).to redirect_to(root_url)
       end
     end
@@ -53,7 +53,7 @@ RSpec.describe 'Web::Admin::Bulletins', type: :request do
       bulletin = bulletins(:under_moderation_bulletin)
       patch archive_admin_bulletin_url(bulletin)
       bulletin.reload
-      expect(bulletin.archived?).to be_truthy
+      expect(bulletin.archived?).to eq(true)
       expect(response).to redirect_to(admin_bulletins_url)
     end
   end
@@ -64,7 +64,7 @@ RSpec.describe 'Web::Admin::Bulletins', type: :request do
       bulletin = bulletins(:under_moderation_bulletin)
       patch publish_admin_bulletin_url(bulletin)
       bulletin.reload
-      expect(bulletin.published?).to be_truthy
+      expect(bulletin.published?).to eq(true)
       expect(response).to redirect_to(admin_root_url)
     end
   end

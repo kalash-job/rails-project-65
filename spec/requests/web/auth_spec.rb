@@ -27,7 +27,7 @@ RSpec.describe 'Web::Auth', type: :request do
       user = User.find_by!(email: auth_hash[:info][:email].downcase)
       expect(response).to redirect_to(root_url)
       expect(user).to be_present
-      expect(signed_in?).to be_truthy
+      expect(signed_in?).to eq(true)
     end
   end
 end

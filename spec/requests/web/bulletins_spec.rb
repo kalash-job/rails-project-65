@@ -169,7 +169,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
         bulletin = bulletins(:one)
         patch archive_bulletin_url(bulletin)
         bulletin.reload
-        expect(bulletin.archived?).to be_truthy
+        expect(bulletin.archived?).to eq(true)
         expect(response).to redirect_to(profile_url)
       end
     end
@@ -193,7 +193,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
         bulletin = bulletins(:one)
         patch moderate_bulletin_url(bulletin)
         bulletin.reload
-        expect(bulletin.under_moderation?).to be_truthy
+        expect(bulletin.under_moderation?).to eq(true)
         expect(response).to redirect_to(profile_url)
       end
     end
@@ -204,7 +204,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
         bulletin = bulletins(:draft_bulletin)
         patch moderate_bulletin_url(bulletin)
         bulletin.reload
-        expect(bulletin.draft?).to be_truthy
+        expect(bulletin.draft?).to eq(true)
         expect(response).to redirect_to(root_url)
       end
     end
