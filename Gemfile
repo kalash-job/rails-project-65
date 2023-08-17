@@ -134,7 +134,7 @@ group :test do
 
   gem 'simplecov', require: false
 
-  gem 'webdrivers'
+  gem 'webdrivers', '~> 5.2.0'
 end
 
 group :production do
