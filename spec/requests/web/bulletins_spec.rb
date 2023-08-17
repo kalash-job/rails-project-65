@@ -5,24 +5,18 @@ require 'rails_helper'
 RSpec.describe 'Web::Bulletins', type: :request do
   fixtures :bulletins, :categories, :users
 
-  before do
-    @title = Faker::Lorem.paragraph_by_chars(number: 50)
-    @long_title = Faker::Lorem.paragraph_by_chars(number: 55)
-    @description = Faker::Lorem.paragraph_by_chars(number: 1000)
-    @image = fixture_file_upload('image1.jpg', 'image/jpeg')
-  end
-
   let(:valid_attributes) do
-    { title: @title, description: @description, category_id: categories(:one).id, image: @image }
+    {
+      title: Faker::Lorem.paragraph_by_chars(number: 50),
+      description: Faker::Lorem.paragraph_by_chars(number: 1000),
+      category_id: categories(:one).id,
+      image: fixture_file_upload('image1.jpg', 'image/jpeg')
+    }
   end
 
-  let(:invalid_attributes) do
-    { title: @long_title, description: @description, category_id: categories(:one).id, image: @image }
-  end
+  let(:invalid_attributes) { valid_attributes.merge(title: nil) }
 
-  let(:searching_attrs) do
-    { title: @title, description: @description, category_id: categories(:one).id }
-  end
+  let(:searching_attrs) { valid_attributes.except(:image) }
 
   describe 'GET /index' do
     it 'renders a successful response' do
