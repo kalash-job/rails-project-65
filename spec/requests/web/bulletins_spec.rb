@@ -18,6 +18,8 @@ RSpec.describe 'Web::Bulletins', type: :request do
 
   let(:searching_attrs) { valid_attributes.except(:image) }
 
+  let(:invalid_searching_attrs) { invalid_attributes.except(:image) }
+
   describe 'GET /index' do
     it 'renders a successful response' do
       get root_url
@@ -67,27 +69,21 @@ RSpec.describe 'Web::Bulletins', type: :request do
 
   describe 'POST /create' do
     context 'with valid parameters' do
-      it 'creates a new Bulletin' do
-        sign_in users(:one)
-        expect { post bulletins_url, params: { bulletin: valid_attributes } }.to change(Bulletin, :count).by(1)
-      end
-
-      it 'redirects to the profile' do
+      it 'creates a new Bulletin and redirects to the profile' do
         sign_in users(:one)
         post bulletins_url, params: { bulletin: valid_attributes }
+        new_bulletin = users(:one).bulletins.find_by(searching_attrs)
+        expect(new_bulletin).to be_present
         expect(response).to redirect_to(profile_url)
       end
     end
 
     context 'with invalid parameters' do
-      it 'does not create a new Bulletin' do
-        sign_in users(:one)
-        expect { post bulletins_url, params: { bulletin: invalid_attributes } }.to change(Bulletin, :count).by(0)
-      end
-
-      it 'responds with :unprocessable_entity status code' do
+      it 'does not create a new Bulletin and responds with :unprocessable_entity status code' do
         sign_in users(:one)
         post bulletins_url, params: { bulletin: invalid_attributes }
+        new_bulletin = users(:one).bulletins.find_by(invalid_searching_attrs)
+        expect(new_bulletin).to be_nil
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
@@ -96,61 +92,40 @@ RSpec.describe 'Web::Bulletins', type: :request do
   describe 'PATCH /update' do
     context 'with valid parameters' do
       context 'when bulletin belongs to current user' do
-        it 'updates the requested bulletin' do
+        it 'updates the requested bulletin and redirects to the profile' do
           user = users(:one)
           sign_in user
           patch bulletin_url(bulletins(:one)), params: { bulletin: valid_attributes }
           expect(user.bulletins.find_by(searching_attrs)).to be_present
-        end
-
-        it 'redirects to the profile' do
-          sign_in users(:one)
-          bulletin = bulletins(:one)
-          patch bulletin_url(bulletin), params: { bulletin: valid_attributes }
-          bulletin.reload
           expect(response).to redirect_to(profile_url)
         end
       end
 
       context 'when bulletin does not belong to current user' do
-        it 'does not update the Bulletin' do
+        it 'does not update the Bulletin and redirects to root' do
           user = users(:one)
           sign_in user
           patch bulletin_url(bulletins(:published_bulletin)), params: { bulletin: valid_attributes }
           expect(user.bulletins.find_by(searching_attrs)).to be_nil
-        end
-
-        it 'redirects to root' do
-          sign_in users(:one)
-          patch bulletin_url(bulletins(:published_bulletin)), params: { bulletin: valid_attributes }
           expect(response).to redirect_to(root_url)
         end
       end
 
       context 'without sign in' do
-        it 'does not update the Bulletin' do
+        it 'does not update the Bulletin and redirects to root' do
           patch bulletin_url(bulletins(:one)), params: { bulletin: valid_attributes }
           expect(users(:one).bulletins.find_by(searching_attrs)).to be_nil
-        end
-
-        it 'redirects to root' do
-          patch bulletin_url(bulletins(:one)), params: { bulletin: valid_attributes }
           expect(response).to redirect_to(root_url)
         end
       end
     end
 
     context 'with invalid parameters' do
-      it 'does not update the Bulletin' do
+      it 'does not update the Bulletin and responds with :unprocessable_entity status code' do
         user = users(:one)
         sign_in user
         patch bulletin_url(bulletins(:one)), params: { bulletin: invalid_attributes }
         expect(user.bulletins.find_by(searching_attrs)).to be_nil
-      end
-
-      it 'responds with :unprocessable_entity status code' do
-        sign_in users(:one)
-        patch bulletin_url(bulletins(:one)), params: { bulletin: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
