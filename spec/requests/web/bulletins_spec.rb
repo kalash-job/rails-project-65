@@ -125,7 +125,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
         user = users(:one)
         sign_in user
         patch bulletin_url(bulletins(:one)), params: { bulletin: invalid_attributes }
-        expect(user.bulletins.find_by(searching_attrs)).to be_nil
+        expect(user.bulletins.find_by(invalid_searching_attrs)).to be_nil
         expect(response).to have_http_status(:unprocessable_entity)
       end
     end
@@ -149,7 +149,7 @@ RSpec.describe 'Web::Bulletins', type: :request do
         bulletin = bulletins(:published_bulletin)
         patch archive_bulletin_url(bulletin)
         bulletin.reload
-        expect(bulletin.archived?).to be_falsey
+        expect(bulletin.published?).to eq(true)
         expect(response).to redirect_to(root_url)
       end
     end
